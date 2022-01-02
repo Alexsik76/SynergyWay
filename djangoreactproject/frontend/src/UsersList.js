@@ -4,7 +4,7 @@ import UsersServices from './UserServices';
 
 const usersServices = new UsersServices();
 
-class UsersList extends  Component{
+class UsersList extends Component {
 
     constructor(props) {
         super(props);
@@ -17,7 +17,6 @@ class UsersList extends  Component{
     componentDidMount() {
         let self = this;
         usersServices.getUsers().then(function (result) {
-            console.log(result);
             self.setState({'users': result})
         });
     }
@@ -32,6 +31,7 @@ class UsersList extends  Component{
             self.setState({users: newArr})
         });
     }
+
     render() {
 
         return (
@@ -41,7 +41,7 @@ class UsersList extends  Component{
                     <tr>
                         <th>#</th>
                         <th>Username</th>
-                        <th>Groups</th>
+                        <th>Group</th>
                         <th>Actions</th>
                     </tr>
                     </thead>
@@ -52,7 +52,9 @@ class UsersList extends  Component{
                             <td>{c.username}</td>
                             <td>{c.groups}</td>
                             <td>
-                            <button type="button" className="btn btn-outline-danger" onClick={(e) => this.handleDelete(e, c.pk)}> Delete</button>
+                                <button type="button" className="btn btn-outline-danger"
+                                        onClick={(e) => this.handleDelete(e, c.pk)}> Delete
+                                </button>
                             </td>
                         </tr>)}
                     </tbody>
@@ -61,5 +63,6 @@ class UsersList extends  Component{
         );
     }
 }
+
 export default UsersList;
 
