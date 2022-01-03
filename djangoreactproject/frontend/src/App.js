@@ -1,6 +1,8 @@
+import React from 'react'
 import { Routes, Route, Outlet, Link } from "react-router-dom";
-import UsersList from "./UsersList";
-import UserCreateUpdate from "./UserCreateUpdate";
+import UsersList from "./components/UsersList";
+import UserCreateUpdate from "./components/UserCreateUpdate";
+import Home from "./components/Home";
 export default function App(){
     return (
         <div>
@@ -13,8 +15,8 @@ export default function App(){
                 </button>
                 <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div className="navbar-nav">
-                        <a className="nav-item nav-link" href="/users/">Users</a>
-                        <a className="nav-item nav-link" href="/users/create/">Create User</a>
+                        <Link to="/users/" className="nav-item nav-link">Users</Link>
+                        <Link to="/users/create/" className="nav-item nav-link">Create User</Link>
                     </div>
                 </div>
             </nav>
@@ -22,7 +24,7 @@ export default function App(){
                 <div className="row justify-content-center">
                 </div>
                 <Routes>
-                    <Route path="/" element={<Layout/>}/>
+                    <Route path="/" element={<Home/>}/>
                     <Route path="/users/" element={<UsersList/>}/>
                     <Route path="/users/create/" element={<UserCreateUpdate/>}/>
                 </Routes>
@@ -30,25 +32,3 @@ export default function App(){
         </div>
   )
 };
-function Layout() {
-  return (
-    <div>
-      <nav>
-        <ul>
-          <li>
-            <Link to="/users/">About</Link>
-          </li>
-          <li>
-            <Link to="/users/create/">Create User</Link>
-          </li>
-          <li>
-            <Link to="/nothing-here">Nothing Here</Link>
-          </li>
-        </ul>
-      </nav>
-      <hr />
-      <Outlet />
-    </div>
-  );
-}
-
