@@ -4,7 +4,7 @@ import {Navigate} from "react-router-dom";
 
 const usersServices = new UsersService();
 
-class UserSimpleUpdate extends Component {
+class UserUpdate extends Component {
 
     constructor(props) {
         super(props);
@@ -81,4 +81,4 @@ class UserSimpleUpdate extends Component {
     }
 }
 
-export default UserSimpleUpdate;
+export default UserUpdate;

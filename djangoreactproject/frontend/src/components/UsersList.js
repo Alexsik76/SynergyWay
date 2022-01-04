@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
-
 import UsersServices from './UserServices';
 import TableRow from "./TableRow";
 import ButtonDelete from "./ButtonDelete";
-import {Link, Outlet} from "react-router-dom";
+import ButtonUpdate from "./ButtonUpdate";
+import {Link} from "react-router-dom";
 
 const usersServices = new UsersServices();
 
@@ -34,7 +34,6 @@ class UsersList extends Component {
     render() {
         return (
             <>
-                <Outlet/>
                 <div className="users--list">
                     <table className="table table-hover">
                         <thead key="thead" className="thead-dark">
@@ -51,13 +50,10 @@ class UsersList extends Component {
                                 < TableRow user={c}
                                 />
                                 <td>
-                                    <Link
-                                        to={`/users/${c.pk}`}
-                                        key={c.pk}
-                                        className="btn btn-outline-primary">
+                                    {/*<ButtonUpdate pk={c.pk} />*/}
+                                    <Link to={`/users/${c.pk}`} className="btn btn-outline-success">
                                         Update
                                     </Link>
-
                                 </td>
                                 <td>
                                     <ButtonDelete pk={c.pk}
