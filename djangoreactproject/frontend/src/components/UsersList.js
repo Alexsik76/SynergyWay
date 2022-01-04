@@ -1,7 +1,9 @@
 import React, {Component} from 'react';
 
 import UsersServices from './UserServices';
-import ButtonDelete from './ButtonDelete';
+import TableRow from "./TableRow";
+import ButtonDelete from "./ButtonDelete";
+import {Link, Outlet} from "react-router-dom";
 
 const usersServices = new UsersServices();
 
@@ -12,7 +14,7 @@ class UsersList extends Component {
         this.state = {
             users: [],
         };
-        this.onUsersChange = this.onUsersChange.bind(this)
+        this.onUsersClick = this.onUsersClick.bind(this)
     }
 
     componentDidMount() {
@@ -22,7 +24,7 @@ class UsersList extends Component {
         });
     }
 
-    onUsersChange(pk) {
+    onUsersClick(pk) {
         let newArr = this.state.users.filter(function (obj) {
             return obj.pk !== pk;
         });
@@ -31,32 +33,44 @@ class UsersList extends Component {
 
     render() {
         return (
-            <div className="users--list">
-                <table className="table table-hover">
-                    <thead key="thead" className="thead-dark">
-                    <tr>
-                        <th>#</th>
-                        <th>Username</th>
-                        <th>Group</th>
-                        <th>Actions</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    {this.state.users.map(c =>
-                        <tr key={c.pk}>
-                            <td>{c.pk}  </td>
-                            <td>{c.username}</td>
-                            <td>{c.groups}</td>
-                            <td>
-                                < ButtonDelete pk={c.pk}
-                                               onUsersChange={this.onUsersChange}
-                                               service = {usersServices}
+            <>
+                <Outlet/>
+                <div className="users--list">
+                    <table className="table table-hover">
+                        <thead key="thead" className="thead-dark">
+                        <tr>
+                            <th>#</th>
+                            <th>Username</th>
+                            <th>Group</th>
+                            <th>Actions</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {this.state.users.map(c =>
+                            <tr key={c.pk}>
+                                < TableRow user={c}
                                 />
-                            </td>
-                        </tr>)}
-                    </tbody>
-                </table>
-            </div>
+                                <td>
+                                    <Link
+                                        to={`/users/${c.pk}`}
+                                        key={c.pk}
+                                        className="btn btn-outline-primary">
+                                        Update
+                                    </Link>
+
+                                </td>
+                                <td>
+                                    <ButtonDelete pk={c.pk}
+                                                  onUsersClick={this.onUsersClick}
+                                                  service={usersServices}
+                                    />
+                                </td>
+                            </tr>
+                        )}
+                        </tbody>
+                    </table>
+                </div>
+            </>
         );
     }
 }

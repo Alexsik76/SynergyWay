@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
-import {Navigate} from 'react-router-dom'
+import {Navigate,  useParams, withRouter} from 'react-router-dom'
 import UsersService from "./UserServices";
+
+
 
 const usersService = new UsersService();
 
@@ -9,8 +11,9 @@ class UserCreateUpdate extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            userName: '',
-            group: '',
+            action: props.action || 'create',
+            userName: props.userName || '',
+            group: props.groups || '',
             leave_page: false
         };
         this.handleNameChange = this.handleNameChange.bind(this);
@@ -39,17 +42,36 @@ class UserCreateUpdate extends Component {
             alert('There was an error! Please re-check your form.' + e);
         });
     }
-
-    handleSubmit(event) {
-        this.handleCreate();
-        event.preventDefault();
+    handleUpdate() {
+        console.log(this.state.userName, this)
+        usersService.updateUser(
+            {
+                "username": this.state.userName,
+                "groups": this.state.group
+            }
+        ).then(() => {
+            this.setState({leave_page: true})
+        }).catch((e) => {
+            alert('There was an error! Please re-check your form.' + e);
+        });
     }
 
+    handleSubmit(event) {
+        this.state.action==='create' ? this.handleCreate(): this.handleUpdate();
+        event.preventDefault();
+    }
+    // componentDidMount() {
+    //     const id = this.props.match.params.id;
+    //
+    // }
+
     render() {
-        if (this.state.leave_page) {
-            return <Navigate to='/users/'/>
-        }
+        // if (this.state.leave_page) {
+        //     return <Navigate to='/users/'/>
+        // }
         return (
+            <>{this.state.leave_page &&
+                <Navigate to='/users/'/>}
             <form onSubmit={this.handleSubmit}>
                 <div className="form-group">
                     <label>Username:</label>
@@ -61,6 +83,7 @@ class UserCreateUpdate extends Component {
                     <input className="btn btn-primary" type="submit" value="Submit"/>
                 </div>
             </form>
+            </>
         );
     }
 }

@@ -8,16 +8,16 @@ class ButtonDelete extends Component {
     }
 
     handleDelete(pk) {
-        this.props.service.delete({pk: pk}).then(
-            () => {
-                console.log('Deleted')
-                this.props.onUsersChange(pk)
+        this.props.service.delete({pk: pk})
+            .then(() => {
+                this.props.onUsersClick(pk)
             });
     }
 
     render() {
-        return (<button type="button" className="btn btn-outline-danger"
-                        onClick={() => this.handleDelete(this.props.pk)}> Delete
+        return (
+            <button type="button" className="btn btn-outline-danger"
+                        onClick={() => this.handleDelete(this.props.pk)}>Delete
             </button>
         )
     }
