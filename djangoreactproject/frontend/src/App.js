@@ -4,13 +4,11 @@ import {Route, Routes, Outlet} from "react-router-dom";
 import UsersList from "./components/UsersList";
 import UserCreateUpdate from "./components/UserCreateUpdate";
 import UpdateForm from "./components/UpdateForm";
-// import UserUpdate from "./components/UserUpdate";
-
 export default function App() {
     return (
         <Routes>
             <Route path="/" element={<LayoutsWithNavbar />}>
-                <Route path="/index" element={<div>Home screen</div>}/>
+                <Route index element={<div>Home screen</div>} />
                 <Route path="users" element={<UsersList />}/>
                 <Route path="users/:userId" element={<UpdateForm />} />
                 <Route path="users/create" element={<UserCreateUpdate />}/>
