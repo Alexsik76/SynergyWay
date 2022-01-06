@@ -1,38 +1,35 @@
-import React, {Component} from 'react';
-import UsersServices from './UserServices';
-import TableRow from "./TableRow";
-import ButtonDelete from "./ButtonDelete";
-import ButtonUpdate from "./ButtonUpdate";
-import {Link} from "react-router-dom";
+import React, { Component } from 'react'
+import UsersServices from './UserServices'
+import TableRow from './TableRow'
+import ButtonDelete from './ButtonDelete'
+import { Link } from 'react-router-dom'
 
-const usersServices = new UsersServices();
+const usersServices = new UsersServices()
 
-class UsersList extends Component {
-
-    constructor(props) {
-        super(props);
-        this.state = {
-            users: [],
-        };
-        this.onUsersClick = this.onUsersClick.bind(this)
+class UsersListOld extends Component {
+  constructor (props) {
+    super(props)
+    this.state = {
+      users: []
     }
+    this.onUsersClick = this.onUsersClick.bind(this)
+  }
 
-    componentDidMount() {
+  componentDidMount () {
+    usersServices.getUsers().then((result) => {
+      this.setState({ users: result })
+    })
+  }
 
-        usersServices.getUsers().then((result) => {
-            this.setState({'users': result})
-        });
-    }
+  onUsersClick (pk) {
+    const newArr = this.state.users.filter(function (obj) {
+      return obj.pk !== pk
+    })
+    this.setState({ users: newArr })
+  }
 
-    onUsersClick(pk) {
-        let newArr = this.state.users.filter(function (obj) {
-            return obj.pk !== pk;
-        });
-        this.setState({users: newArr})
-    }
-
-    render() {
-        return (
+  render () {
+    return (
             <>
                 <div className="users--list">
                     <table className="table table-hover">
@@ -50,7 +47,6 @@ class UsersList extends Component {
                                 < TableRow user={c}
                                 />
                                 <td>
-                                    {/*<ButtonUpdate pk={c.pk} />*/}
                                     <Link to={`/users/${c.pk}`} className="btn btn-outline-success">
                                         Update
                                     </Link>
@@ -67,9 +63,8 @@ class UsersList extends Component {
                     </table>
                 </div>
             </>
-        );
-    }
+    )
+  }
 }
 
-export default UsersList;
-
+export default UsersListOld

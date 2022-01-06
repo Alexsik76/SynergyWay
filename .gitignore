@@ -138,3 +138,4 @@ dmypy.json
 /.idea/SynergyWay.iml
 /.idea/vcs.xml
 /test_task_Python.pdf
+/djangoreactproject/node_modules/
