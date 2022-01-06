@@ -4,22 +4,24 @@ import axios from "axios";
 // import {Link} from "react-router-dom";
 // import ButtonDelete from "../components/ButtonDelete";
 import Loader from "react-loader-spinner";
+import {Button} from "react-bootstrap";
 
 export default function UsersList() {
     const [users, setData] = useState([]);
     const [isLoading, setIsLoading] = useState(false)
+
     useEffect(() => {
         setIsLoading(true)
-        setTimeout(fetchData, 2000)
+        fetchData()
         setIsLoading(false)
         },[]);
 
 
     async function fetchData() {
         try {
-            let response = await axios.get('http://localhost:8000/api/users')
-            response = await response.data
-            setData(response)
+            const response = await axios.get('http://localhost:8000/api/users')
+            const data = await response.data
+            setData(data)
 
         } catch (error) {
             console.error(error);
@@ -29,7 +31,7 @@ export default function UsersList() {
     async function deleteUser(pk) {
         try {
             await axios.delete(`http://localhost:8000/api/users/${pk}/`)
-            setData(users.filter((obj)=>{ return obj.pk !== pk})
+            setData(prevData => prevData.filter((obj)=>{ return obj.pk !== pk})
             )
         } catch (error) {
             console.error(error);
@@ -38,8 +40,6 @@ export default function UsersList() {
 
     return (
         <div className="users--list">
-            {(isLoading || users.length === 0) ?
-                <Loader type="Bars" color="#00BFFF" height={80} width={80} /> :
                 <table className="table table-hover">
                     <thead key="thead" className="thead-dark">
                     <tr>
@@ -50,7 +50,13 @@ export default function UsersList() {
                     </tr>
                     </thead>
                     <tbody>
-                    {users.map(c =>
+                    {(isLoading || !Array.isArray(users) || users.length === 0) ?
+                        <tr>
+                            <td colSpan="4" align="center">
+                <Loader type="Bars" color="#00BFFF" height={80} width={80} />
+                            </td>
+                        </tr>:
+                        users.map(c =>
                         <tr key={c.pk}>
                             < TableRow user={c}
                             />
@@ -60,23 +66,17 @@ export default function UsersList() {
                                 {/* </Link> */}
                             </td>
                             <td>
-                                <button onClick={() => {
-                                    deleteUser(c.pk)
-                                }
-                                }
-                                >
+                                <Button variant="outline-danger" onClick={() => {deleteUser(c.pk)}}>
                                     Delete user
-                                </button>
-                                {/* <ButtonDelete pk={c.pk} */}
-                                {/*              onUsersClick={this.onUsersClick} */}
-                                {/*              service={usersServices} */}
-                                {/* /> */}
+                                </Button>
+
                             </td>
                         </tr>
                     )}
+
                     </tbody>
                 </table>
-            }
+
         </div>
 
     )
