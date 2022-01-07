@@ -17,11 +17,21 @@ async function getUsers(dispatch) {
         console.error(error);
     }
 }
+async function createUser(dispatch, user) {
+    try {
+        const response = await axios.post(`${API_URL}/users/`, user)
+        dispatch({
+            type: 'createUser',
+            user: await response.data
+        })
+    } catch (error) {
+        console.error(error);
+    }
+}
 
 async function updateUser(dispatch, user) {
     try {
         const response = await axios.put(`${API_URL}/users/${user.pk}/`, user)
-        await console.log('resp', response)
         dispatch({
             type: 'updateUser',
             user: await response.data
@@ -29,8 +39,6 @@ async function updateUser(dispatch, user) {
     } catch (error) {
         console.error(error);
     }
-
-
 }
 
 async function deleteUser(dispatch, pk) {
@@ -45,6 +53,11 @@ async function deleteUser(dispatch, pk) {
 
 const usersReducer = (state, action) => {
     switch (action.type) {
+        case 'createUser':
+            console.log('1', state.length )
+            state.push(action.user)
+            console.log('2', state.length )
+            return state
         case 'getUsers':
             state = action.payload;
             return state
@@ -53,7 +66,6 @@ const usersReducer = (state, action) => {
                 return obj.pk !== action.pk
             })
         case 'updateUser':
-            console.log(state)
             state = state.filter((obj) => {
                 return obj.pk !== action.user.pk
             })
@@ -65,4 +77,4 @@ const usersReducer = (state, action) => {
             return state
     }
 }
-export {usersReducer, getUsers, updateUser, deleteUser, init}
+export {usersReducer, getUsers, createUser, updateUser, deleteUser, init}

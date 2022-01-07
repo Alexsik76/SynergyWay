@@ -1,9 +1,10 @@
 import React, {useEffect, useReducer, useState} from 'react'
 import TableRow from '../components/TableRow'
-import {usersReducer, getUsers, updateUser,deleteUser, init} from "../components/reducer";
+import {usersReducer, getUsers, createUser, updateUser, deleteUser, init} from "../components/reducer";
 import Loader from "react-loader-spinner";
 import {Button} from "react-bootstrap";
 import ModalUpdate from "../components/ModalUpdate";
+import ModalCreate from "../components/ModalCreate";
 
 
 
@@ -11,21 +12,26 @@ export default function UsersList(initialData=[]) {
 
     const [users, usersDispatch] = useReducer(usersReducer, initialData, init);
     const [isLoading, setIsLoading] = useState(false)
-    const userSave = (newUser) => {
-        console.log(newUser)
-        updateUser(usersDispatch, newUser)
 
+    const createFn = (new_user) => {
+        createUser(usersDispatch, new_user)
+        console.log('created',users.length)
+    }
+    const updateFn = (new_user) => {
+        updateUser(usersDispatch, new_user)
+        console.log('updated',users.length)
     }
 
     useEffect(() => {
         setIsLoading(true)
         getUsers(usersDispatch)
-        console.log('updated')
         setIsLoading(false)
-    }, []);
+    }, [users.length]);
 
     return (
+
         <div className="users--list">
+        <ModalCreate userCreate={createFn}/>
             <table className="table table-hover">
                 <thead key="thead" className="thead-dark">
                 <tr>
@@ -47,7 +53,7 @@ export default function UsersList(initialData=[]) {
                             < TableRow user={c}
                             />
                             <td>
-                                <ModalUpdate user={c} userSave={userSave}/>
+                                <ModalUpdate user={c} userUpdate={updateFn}/>
                             </td>
                             <td>
                                 <Button variant="outline-danger" onClick={() => {

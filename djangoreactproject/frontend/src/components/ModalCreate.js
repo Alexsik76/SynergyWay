@@ -1,23 +1,23 @@
 import React, {useState} from "react";
 import {Button, Modal} from "react-bootstrap";
 
-import FormUpdate from "./formUpdate";
-export default function ModalUpdate(props) {
+import FormCreate from "./formCreate";
+export default function ModalCreate(props) {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   //Handle fields
-  const [username, setUsername] = useState(props.user.username)
-  const [group, setGroup] = useState(props.user.groups)
+  const [username, setUsername] = useState()
+  const [group, setGroup] = useState()
   const handleUsername = (event) => {
     setUsername(event.target.value)
   }
   const handleGroup = (event) => {
     setGroup(event.target.value)
   }
-  const userUpdate = () => {
-    props.userUpdate(
-                      {pk: props.user.pk,
+  const userCreate = () => {
+    props.userCreate(
+                      {
                       username: username,
                       groups: group
                       }
@@ -35,16 +35,14 @@ export default function ModalUpdate(props) {
           <Modal.Title>Modal heading</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <FormUpdate username={username}
-                      handleUsername={handleUsername}
-                      group={group}
+          <FormCreate handleUsername={handleUsername}
                       handleGroup={handleGroup}/>
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>
-          <Button variant="primary" onClick={userUpdate}>
+          <Button variant="primary" onClick={userCreate}>
             Save Changes
           </Button>
         </Modal.Footer>
