@@ -28,7 +28,7 @@ export default function ModalUpdate(props) {
   return (
     <>
       <Button variant="primary" onClick={handleShow}>
-        Launch demo modal
+        Update
       </Button>
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>

@@ -54,10 +54,7 @@ async function deleteUser(dispatch, pk) {
 const usersReducer = (state, action) => {
     switch (action.type) {
         case 'createUser':
-            console.log('1', state.length )
-            state.push(action.user)
-            console.log('2', state.length )
-            return state
+            return [...state, action.user]
         case 'getUsers':
             state = action.payload;
             return state
@@ -69,8 +66,7 @@ const usersReducer = (state, action) => {
             state = state.filter((obj) => {
                 return obj.pk !== action.user.pk
             })
-            state.push(action.user)
-            return state
+            return [...state, action.user]
         case 'reset':
             return init(action.payload);
         default:

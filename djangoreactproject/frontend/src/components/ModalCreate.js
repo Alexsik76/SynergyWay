@@ -28,7 +28,7 @@ export default function ModalCreate(props) {
   return (
     <>
       <Button variant="primary" onClick={handleShow}>
-        Launch demo modal
+        Create
       </Button>
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>

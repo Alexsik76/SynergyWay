@@ -15,11 +15,9 @@ export default function UsersList(initialData=[]) {
 
     const createFn = (new_user) => {
         createUser(usersDispatch, new_user)
-        console.log('created',users.length)
     }
     const updateFn = (new_user) => {
         updateUser(usersDispatch, new_user)
-        console.log('updated',users.length)
     }
 
     useEffect(() => {
