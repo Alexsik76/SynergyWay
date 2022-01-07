@@ -1,7 +1,6 @@
 import React from "react";
 
 function TableRow(user) {
-
     const {pk, username, groups} = user.user
     return (<>
             <td>{pk} </td>
