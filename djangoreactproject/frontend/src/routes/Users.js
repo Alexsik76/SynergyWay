@@ -1,8 +1,9 @@
 import React, {useEffect, useReducer, useState} from 'react'
 import TableRow from '../components/TableRow'
-import {usersReducer, getUsers, deleteUser, init} from "../components/reducer";
+import {usersReducer, getUsers, updateUser,deleteUser, init} from "../components/reducer";
 import Loader from "react-loader-spinner";
 import {Button} from "react-bootstrap";
+import ModalUpdate from "../components/ModalUpdate";
 
 
 
@@ -10,6 +11,11 @@ export default function UsersList(initialData=[]) {
 
     const [users, usersDispatch] = useReducer(usersReducer, initialData, init);
     const [isLoading, setIsLoading] = useState(false)
+    const userSave = (newUser) => {
+        console.log(newUser)
+        updateUser(usersDispatch, newUser)
+
+    }
 
     useEffect(() => {
         setIsLoading(true)
@@ -17,7 +23,6 @@ export default function UsersList(initialData=[]) {
         console.log('updated')
         setIsLoading(false)
     }, []);
-
 
     return (
         <div className="users--list">
@@ -42,9 +47,7 @@ export default function UsersList(initialData=[]) {
                             < TableRow user={c}
                             />
                             <td>
-                                {/* <Link to={`/users/${c.pk}`} className="btn btn-outline-success"> */}
-                                {/*    Update */}
-                                {/* </Link> */}
+                                <ModalUpdate user={c} userSave={userSave}/>
                             </td>
                             <td>
                                 <Button variant="outline-danger" onClick={() => {
