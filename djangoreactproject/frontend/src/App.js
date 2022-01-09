@@ -3,8 +3,8 @@ import { Route, Routes } from 'react-router-dom'
 
 import BaseLayout from './routes/BaseLayout'
 import UsersList from './routes/Users'
-import UserCreateUpdate from './components/UserCreateUpdate'
-import UpdateForm from './components/UpdateForm'
+// import UserCreateUpdate from './components/UserCreateUpdate'
+// import UpdateForm from './components/UpdateForm'
 export default function App () {
   return (
         <Routes>
@@ -13,8 +13,8 @@ export default function App () {
                                 <small className="text-muted">Home screen</small>
                             </h3></div>} />
                 <Route path="users" element={<UsersList />}/>
-                <Route path="users/:userId" element={<UpdateForm />} />
-                <Route path="users/create" element={<UserCreateUpdate />}/>
+                {/*<Route path="users/:userId" element={<UpdateForm />} />*/}
+                {/*<Route path="users/create" element={<UserCreateUpdate />}/>*/}
                 <Route
                     path="*"
                     element={

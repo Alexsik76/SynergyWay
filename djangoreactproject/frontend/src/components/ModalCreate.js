@@ -22,7 +22,6 @@ export default function ModalCreate(props) {
                       groups: group
                       }
                   )
-
     setShow(false)
     }
   return (
