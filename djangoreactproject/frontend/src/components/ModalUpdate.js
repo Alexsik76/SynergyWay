@@ -10,8 +10,8 @@ export default function ModalUpdate(props) {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
     //Handle fields
-    const [username, setUsername] = useState(props.user.username)
-    const [group, setGroup] = useState(props.user.groups)
+    const [username, setUsername] = useState(props.obj.username)
+    const [group, setGroup] = useState(props.obj.groups)
     const handleUsername = (event) => {
         setUsername(event.target.value)
     }
@@ -21,7 +21,7 @@ export default function ModalUpdate(props) {
     const {mutate} = useSWRConfig()
 
     async function handleUpdate() {
-        const path_part = `/users/${props.user.pk}/`
+        const path_part = `/users/${props.obj.pk}/`
         try {
             await updateObject({
                     username: username,

@@ -38,16 +38,16 @@ export default function UsersList() {
                             </td>
                         </tr>
                         :
-                        data.map(c =>
-                            <tr key={c.pk}>
-                                < UserTableRow user={c}
+                        data.map(obj =>
+                            <tr key={obj.pk}>
+                                < UserTableRow obj={obj}
                                 />
                                 <td>
-                                    <ModalUpdate user={c}/>
+                                    <ModalUpdate obj={obj}/>
                                 </td>
                                 <td>
                                     <Button variant="outline-danger"
-                                            onClick={()=>handleDelete(c.pk)}
+                                            onClick={()=>handleDelete(obj.pk)}
                                     >
                                         Delete user
                                     </Button>

@@ -1,7 +1,8 @@
 import React from "react";
 
-function UserTableRow(user) {
-    const {pk, username, groups} = user.user
+function UserTableRow(props) {
+    console.log(props)
+    const {pk, username, groups} = props.obj
     return (<>
             <td>{pk} </td>
             <td>{username}</td>

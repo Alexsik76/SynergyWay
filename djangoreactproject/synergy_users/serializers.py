@@ -10,6 +10,8 @@ class GroupSerializer(serializers.ModelSerializer):
 
 
 class UserSerializer(serializers.ModelSerializer):
+    group = GroupSerializer(required=False)
+
     class Meta:
         model = SynergyUser
-        fields = ('pk', 'username', 'created', 'groups')
+        fields = ('pk', 'username', 'created', 'group')
