@@ -26,6 +26,15 @@ function useUsers() {
     };
 }
 
+function useGroups() {
+    const {data, error, mutate} = useSWR(`${API_URL}/groups/`, fetcher)
+    return {
+        data,
+        isLoading: !error && !data,
+        mutate
+    };
+}
+
 async function createObject(obj, path_part) {
     const url = get_url(path_part)
     try {
@@ -55,4 +64,4 @@ async function deleteObject(id, path_part) {
 }
 
 
-export {get_url, useUsers, createObject, updateObject, deleteObject}
+export {get_url, useUsers, createObject, updateObject, deleteObject, useGroups}

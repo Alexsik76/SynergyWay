@@ -1,5 +1,5 @@
 import React from 'react'
-import TableRow from '../components/TableRow'
+import UserTableRow from '../components/UserTableRow'
 import Loader from "react-loader-spinner";
 import {Button} from "react-bootstrap";
 
@@ -40,7 +40,7 @@ export default function UsersList() {
                         :
                         data.map(c =>
                             <tr key={c.pk}>
-                                < TableRow user={c}
+                                < UserTableRow user={c}
                                 />
                                 <td>
                                     <ModalUpdate user={c}/>

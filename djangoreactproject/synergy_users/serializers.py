@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from synergy_users.models import SynergyGroup, SynergyUser
+from .models import SynergyGroup, SynergyUser
 
 
 class GroupSerializer(serializers.ModelSerializer):

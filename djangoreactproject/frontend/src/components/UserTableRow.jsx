@@ -1,6 +1,6 @@
 import React from "react";
 
-function TableRow(user) {
+function UserTableRow(user) {
     const {pk, username, groups} = user.user
     return (<>
             <td>{pk} </td>
@@ -10,4 +10,4 @@ function TableRow(user) {
     )
 }
 
-export default TableRow
+export default UserTableRow

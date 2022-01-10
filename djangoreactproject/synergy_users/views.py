@@ -1,5 +1,5 @@
-from synergy_users.models import SynergyUser, SynergyGroup
-from synergy_users.serializers import UserSerializer, GroupSerializer
+from .models import SynergyUser, SynergyGroup
+from .serializers import UserSerializer, GroupSerializer
 from rest_framework import generics
 
 
