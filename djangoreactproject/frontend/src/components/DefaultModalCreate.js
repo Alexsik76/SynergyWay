@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import {Button, Modal} from "react-bootstrap";
 import {useSWRConfig} from "swr";
 
-import FormCreate from "./formCreate";
+import FormCreate from "./FormCreate";
 import {get_url, createObject} from "./api_services";
 
 export default function DefaultModalCreate(props) {
@@ -16,13 +16,14 @@ export default function DefaultModalCreate(props) {
         setVal1(event.target.value)
     }
     const handleVal2 = (event) => {
-        setVal2(event.target.value)
+            setVal2(event.target.value)
+
     }
     const {mutate} = useSWRConfig()
 
     async function handleCreate() {
         const path_part = `/${props.table_name}/`;
-        let fields = (props.table_name === 'users') ? ['username', 'groups']: ['name', 'description']
+        let fields = (props.table_name === 'users') ? ['username', 'group']: ['name', 'description']
         const newObject = {}
         newObject[fields[0]] = val1
         newObject[fields[1]] = val2
@@ -46,8 +47,8 @@ export default function DefaultModalCreate(props) {
                 </Modal.Header>
                 <Modal.Body>
                     <FormCreate handleVal1={handleVal1}
-                                handleVal2={handleVal2}
-                                table_name={props.table_name}
+                                     handleVal2={handleVal2}
+                                     table_name={props.table_name}
                     />
                 </Modal.Body>
                 <Modal.Footer>

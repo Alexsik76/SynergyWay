@@ -1,5 +1,5 @@
 import React from "react";
-import Loader from "react-loader-spinner";
+
 
 function TableThead(props) {
     switch (props.table_name) {
@@ -26,17 +26,6 @@ function TableThead(props) {
     }
 }
 
-function LoaderSpinner() {
-    return (
-        <tr>
-            <td colSpan="4" align="center">
-                <Loader type="Bars" color="#00BFFF" height={80} width={80}/>
-            </td>
-        </tr>
-    )
-}
-
-
 function TableRow(props) {
 if ('group' in props.obj) {
     const {pk, username, group} = props.obj
@@ -44,7 +33,7 @@ if ('group' in props.obj) {
     return (<>
             <td>{pk}</td>
             <td>{username}</td>
-            <td>{group.name}</td>
+            <td>{group}</td>
         </>
     )
 } else {
@@ -58,7 +47,4 @@ if ('group' in props.obj) {
 }
 }
 
-
-
-
-export {TableThead,LoaderSpinner, TableRow}
+export {TableThead, TableRow}

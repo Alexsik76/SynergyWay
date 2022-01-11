@@ -1,12 +1,14 @@
 import React from 'react'
 import {Button} from "react-bootstrap";
 
-import {TableThead, TableRow, LoaderSpinner} from "../components/table_components";
+import {TableThead, TableRow} from "../components/table_components";
 
 import DefaultModalCreate from "../components/DefaultModalCreate";
 import ModalUpdate from "../components/ModalUpdate";
 
 import {deleteObject, useObjects} from "../components/api_services";
+import Loader from "react-loader-spinner";
+
 
 export default function DefaultTable(props) {
 
@@ -16,14 +18,12 @@ export default function DefaultTable(props) {
     async function handleDelete(pk) {
         const path_part = `/${props.table_name}/${pk}`
         try {
-        await deleteObject(pk, path_part)
-        await mutate()
-            } catch (error){
+            await deleteObject(pk, path_part)
+            await mutate()
+        } catch (error) {
             console.error(error)
         }
     }
-
-
 
     return (
         <div className="users--list">
@@ -35,7 +35,11 @@ export default function DefaultTable(props) {
                 <tbody>
                 {
                     (isLoading) ?
-                        <LoaderSpinner/>
+                        <tr>
+                            <td colSpan="4" align="center">
+                                <Loader type="Bars" color="#00BFFF" height={80} width={80}/>
+                            </td>
+                        </tr>
                         :
                         data.map(obj =>
                             <tr key={obj.pk}>
@@ -57,5 +61,4 @@ export default function DefaultTable(props) {
         </div>
 
     )
-
 }

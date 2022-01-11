@@ -9,7 +9,7 @@ class SynergyGroup(models.Model):
     description = models.CharField('Description', max_length=255)
 
     def __str__(self):
-        return self.name
+        return f'{self.id}: {self.name}'
 
 
 class SynergyUser(models.Model):
