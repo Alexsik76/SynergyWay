@@ -1,4 +1,5 @@
-import React from "react";
+import React, {useState} from "react";
+import {Alert} from "react-bootstrap";
 
 
 function TableThead(props) {
@@ -27,24 +28,46 @@ function TableThead(props) {
 }
 
 function TableRow(props) {
-if ('group' in props.obj) {
-    const {pk, username, group} = props.obj
-    console.log(props.obj)
-    return (<>
-            <td>{pk}</td>
-            <td>{username}</td>
-            <td>{group}</td>
-        </>
-    )
-} else {
-    const {pk, name, description} = props.obj
-    return (<>
-            <td>{pk} </td>
-            <td>{name}</td>
-            <td>{description}</td>
-        </>
-    )
-}
+    if ('group' in props.obj) {
+        const {pk, username, group} = props.obj
+        return (<>
+                <td>{pk}</td>
+                <td>{username}</td>
+                <td>{group}</td>
+            </>
+        )
+    } else {
+        const {pk, name, description} = props.obj
+        return (<>
+                <td>{pk} </td>
+                <td>{name}</td>
+                <td>{description}</td>
+            </>
+        )
+    }
 }
 
-export {TableThead, TableRow}
+function AlertDismissibleError(props) {
+    const [show, setShow] = useState(!!props.errorText);
+
+
+    return (
+        <>
+            {
+                show &&
+                <Alert variant="danger" onClose={() => {
+                    setShow(false)
+                    props.setter("")
+                }} dismissible>
+                    <Alert.Heading>Server error!</Alert.Heading>
+                    <p>
+                        {props.errorText}
+                    </p>
+                </Alert>
+            }
+        </>
+    );
+}
+
+
+export {TableThead, TableRow, AlertDismissibleError}

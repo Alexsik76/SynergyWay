@@ -37,7 +37,7 @@ export default function ModalUpdate(props) {
 
     return (
         <>
-            <Button variant="primary" onClick={handleShow}>
+            <Button variant="outline-primary" onClick={handleShow}>
                 Update
             </Button>
             <Modal show={show} onHide={handleClose}>

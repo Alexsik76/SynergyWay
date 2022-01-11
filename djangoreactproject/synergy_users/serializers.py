@@ -7,15 +7,9 @@ class GroupSerializer(serializers.ModelSerializer):
     class Meta:
         model = SynergyGroup
         fields = ('pk', 'name', 'description')
+   
 
-
-def get_group_choices():
-    all_groups = SynergyGroup.objects.all()
-    choices = [(obj.id, obj.name) for obj in all_groups]
-    return choices
-
-
-class GroupField(serializers.RelatedField):
+class GroupFieldSerializer(serializers.RelatedField):
 
     queryset = SynergyGroup.objects.all()
 
@@ -28,7 +22,7 @@ class GroupField(serializers.RelatedField):
 
 
 class UserSerializer(serializers.ModelSerializer):
-    group = GroupField()
+    group = GroupFieldSerializer()
 
     class Meta:
         model = SynergyUser

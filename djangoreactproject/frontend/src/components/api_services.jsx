@@ -48,11 +48,7 @@ async function updateObject(obj, path_part) {
 
 async function deleteObject(id, path_part) {
     const url = get_url(path_part)
-    try {
         await axios.delete(url)
-    } catch (error) {
-        console.error(error);
-    }
 }
 
 

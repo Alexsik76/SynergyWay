@@ -38,7 +38,7 @@ export default function DefaultModalCreate(props) {
 
     return (
         <>
-            <Button variant="primary" onClick={handleShow}>
+            <Button variant="outline-primary" onClick={handleShow}>
                 Create
             </Button>
             <Modal show={show} onHide={handleClose}>
