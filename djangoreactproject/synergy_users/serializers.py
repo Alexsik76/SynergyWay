@@ -1,15 +1,30 @@
 from rest_framework import serializers
 
-from synergy_users.models import SynergyGroup, SynergyUser
+from .models import SynergyGroup, SynergyUser
 
 
 class GroupSerializer(serializers.ModelSerializer):
     class Meta:
         model = SynergyGroup
         fields = ('pk', 'name', 'description')
+   
+
+class GroupFieldSerializer(serializers.RelatedField):
+
+    queryset = SynergyGroup.objects.all()
+
+    def to_representation(self, value):
+        return value.name
+
+    def to_internal_value(self, data):
+        obj = self.queryset.get(name=data)
+        return obj
 
 
 class UserSerializer(serializers.ModelSerializer):
+    group = GroupFieldSerializer()
+
     class Meta:
         model = SynergyUser
-        fields = ('pk', 'username', 'created', 'groups')
+        fields = ('pk', 'username', 'created', 'group')
+
