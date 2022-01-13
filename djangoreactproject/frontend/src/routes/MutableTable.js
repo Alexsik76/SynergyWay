@@ -1,30 +1,20 @@
 import React, { useState } from "react";
-import { Button } from "react-bootstrap";
 
 import {
-  TableThead,
-  TableRow,
   AlertDismissibleError,
+  TableThead,
+  MySpinner,
+  TableRow,
 } from "../components/table_components";
 
 import MutableModal from "../components/MutableModal";
 
-import { deleteObject, useObjects } from "../components/utils";
-import Loader from "react-loader-spinner";
+import { useObjects } from "../components/utils";
 
 export default function MutableTable(props) {
   const [tableError, setError] = useState(null);
   const { data, isLoading, mutate } = useObjects(props.table_name);
 
-  async function handleDelete(pk) {
-    const path_part = `/${props.table_name}/${pk}`;
-    try {
-      await deleteObject(pk, path_part);
-      await mutate();
-    } catch (error) {
-      setError(error.response.data);
-    }
-  }
   return (
     <div className="users--list">
       {tableError && (
@@ -42,29 +32,16 @@ export default function MutableTable(props) {
         </thead>
         <tbody>
           {isLoading ? (
-            <tr>
-              <td colSpan="4" align="center">
-                <Loader type="Bars" color="#00BFFF" height={80} width={80} />
-              </td>
-            </tr>
+            <MySpinner table_name={props.table_name} />
           ) : (
             data.map((obj) => (
               <tr key={obj["pk"]}>
-                <TableRow obj={obj} />
-                <td>
-                  <MutableModal
-                    table_name={props.table_name}
-                    action={"update"}
-                    obj={obj}
-                    mutate={mutate}
-                  />{" "}
-                  <Button
-                    variant="outline-danger"
-                    onClick={() => handleDelete(obj["pk"])}
-                  >
-                    Delete
-                  </Button>
-                </td>
+                <TableRow
+                  table_name={props.table_name}
+                  obj={obj}
+                  errorSetter={setError}
+                  mutate={mutate}
+                />
               </tr>
             ))
           )}

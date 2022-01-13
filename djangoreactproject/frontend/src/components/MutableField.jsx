@@ -10,11 +10,12 @@ export default function MutableField(props) {
       <Loader type="Bars" color="#00BFFF" height={80} width={80} />
     ) : (
       <Form.Select
+        required
         aria-label="Select group name"
         onChange={props.handler}
         value={props.value}
       >
-        <option>Select group</option>
+        <option value="">Select group</option>
         {data.map((obj) => (
           <option key={obj["pk"]} value={obj.name}>
             {obj.name}
@@ -27,6 +28,7 @@ export default function MutableField(props) {
       <>
         <Form.Label>Description</Form.Label>
         <Form.Control
+          required
           type="text"
           placeholder="Description"
           onChange={props.handler}
