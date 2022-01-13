@@ -23,7 +23,6 @@ export default function MutableModal(props) {
           new_val2: val2,
           mutate: props.mutate,
         });
-        // await cleanFields()
         await setShow(false);
       }
     } catch (error) {

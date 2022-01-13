@@ -16,18 +16,16 @@ export default function MutableForm(props) {
     event.preventDefault();
     const form = event.currentTarget;
     if (form.checkValidity() === false) {
-      // event.preventDefault();
       event.stopPropagation();
     }
     setValidated(true);
     props.handleForm(val1, val2);
   };
-
   const field_name =
-    props.initValues.table_name === "users" ? "Username" : "Group name";
+    props.initValues.table === "users" ? "Username" : "Group name";
   return (
     <Form noValidate validated={validated} onSubmit={handleSubmit}>
-      <Form.Group className="mb-3" controlId="formUpdateUsername">
+      <Form.Group className="mb-3" controlId={"form"+field_name+1}>
         <Form.Label>{field_name}</Form.Label>
         <Form.Control
           required
@@ -37,9 +35,9 @@ export default function MutableForm(props) {
           value={val1}
         />
       </Form.Group>
-      <Form.Group className="mb-3" controlId="formUpdateGroup">
+      <Form.Group className="mb-3" controlId={"form" + field_name + 1}>
         <MutableField
-          table_name={props.initValues.table_name}
+          table_name={props.initValues.table}
           handler={handleVal2}
           value={val2}
         />
