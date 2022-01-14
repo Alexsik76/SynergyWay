@@ -10,7 +10,12 @@ export default function MutableModal(props) {
     setShow(false);
   };
   const handleShow = () => setShow(true);
-  //Handle fields
+
+  function handleValues(val1, val2) {
+    actionCreateOrUpdate()
+  }
+
+
   const initValues = getInitValues(props.table_name, props.action, props.obj);
 
   async function handleForm(val1, val2) {
@@ -42,7 +47,7 @@ export default function MutableModal(props) {
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <MutableForm handleForm={handleForm} initValues={initValues} />
+          <MutableForm handleForm={handleForm} initValues={initValues} fields={props.fields}/>
         </Modal.Body>
       </Modal>
     </>

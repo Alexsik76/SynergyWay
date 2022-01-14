@@ -9,11 +9,12 @@ import {
 
 import MutableModal from "../components/MutableModal";
 
-import { useObjects } from "../components/utils";
+import {getFields2, useObjects} from "../components/utils";
 
 export default function MutableTable(props) {
   const [tableError, setError] = useState(null);
   const { data, isLoading, mutate } = useObjects(props.table_name);
+  const fields=getFields2(props.table_name)
 
   return (
     <div className="users--list">
@@ -23,7 +24,7 @@ export default function MutableTable(props) {
       <MutableModal
         table_name={props.table_name}
         action={"create"}
-        obj={""}
+        fields={fields}
         mutate={mutate}
       />
       <table className="table table-hover">
@@ -40,6 +41,7 @@ export default function MutableTable(props) {
                   table_name={props.table_name}
                   obj={obj}
                   errorSetter={setError}
+                  fields={fields}
                   mutate={mutate}
                 />
               </tr>

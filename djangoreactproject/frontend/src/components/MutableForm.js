@@ -4,6 +4,10 @@ import MutableField from "./MutableField";
 
 export default function MutableForm(props) {
   const [validated, setValidated] = useState(false);
+  function get_value (field_name) {
+    return
+  }
+
   const [val1, setVal1] = useState(props.initValues.field1Val);
   const [val2, setVal2] = useState(props.initValues.field2Val);
   const handleVal1 = (event) => {

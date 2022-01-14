@@ -95,10 +95,64 @@ function getInitValues(table, action, obj) {
   return initValues;
 }
 
+function getFields (tableName) {
+        const tableFields = {
+        field1: {
+            name:"",
+            initValue:"",
+            handler:""
+        },
+        field2: {
+            name:"",
+            initValue:"",
+            handler:""
+        },
+    }
+        switch (tableName) {
+            case "users": {
+                tableFields.field1.name = "username"
+                tableFields.field2.name = "group"
+                break
+            }
+            case "groups": {
+                tableFields.field1.name = "name"
+                tableFields.field2.name = "descriptions"
+                break
+            }
+        }
+       return tableFields
+    }
+
+    class Field {
+    constructor(name) {
+        this.name = name
+    }
+    set_init_value(obj) {
+       return (obj!== undefined)? obj[this.name]: ""
+        }
+    }
+    function getFields2(table_name) {
+
+        return (table_name === 'users')
+            ?
+            {
+                field1: new Field('username'),
+                field2: new Field('group')
+            }
+            :
+            {
+                field1: new Field('name'),
+                field2: new Field('description')
+            }
+        }
+
+
 export {
   get_url,
   useObjects,
   deleteObject,
   actionCreateOrUpdate,
   getInitValues,
+  getFields,
+  getFields2
 };
