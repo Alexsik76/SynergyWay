@@ -9,12 +9,12 @@ import {
 
 import MutableModal from "../components/MutableModal";
 
-import {getFields2, useObjects} from "../components/utils";
+import { getFields, useObjects } from "../components/utils";
 
 export default function MutableTable(props) {
   const [tableError, setError] = useState(null);
   const { data, isLoading, mutate } = useObjects(props.table_name);
-  const fields=getFields2(props.table_name)
+  const fields = getFields(props.table_name);
 
   return (
     <div className="users--list">

@@ -6,7 +6,6 @@ import BaseLayout from "./routes/BaseLayout";
 import MutableTable from "./routes/MutableTable";
 
 export default function App() {
-
   return (
     <Routes>
       <Route path="/" element={<BaseLayout />}>
@@ -21,7 +20,7 @@ export default function App() {
           }
         />
         <Route path="users" element={<MutableTable table_name={"users"} />} />
-        <Route path="groups" element={<MutableTable table_name={"groups"}/>} />
+        <Route path="groups" element={<MutableTable table_name={"groups"} />} />
         <Route
           path="*"
           element={

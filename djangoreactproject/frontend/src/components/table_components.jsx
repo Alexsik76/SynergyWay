@@ -24,7 +24,6 @@ function TableThead(props) {
 
 function TableRow(props) {
   const all_fields = getFieldsNames(props.table_name);
-
   return (
     <>
       {all_fields.map((field_name) => (
@@ -38,7 +37,7 @@ function TableRow(props) {
 }
 
 function RowActions(props) {
-  const { table_name, obj, mutate, errorSetter } = props.props;
+  const { table_name, obj, mutate, errorSetter, fields } = props.props;
 
   async function handleDelete() {
     try {
@@ -55,6 +54,7 @@ function RowActions(props) {
         action={"update"}
         obj={obj}
         mutate={mutate}
+        fields={fields}
       />{" "}
       <Button variant="outline-danger" onClick={handleDelete}>
         Delete

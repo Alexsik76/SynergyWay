@@ -22,6 +22,7 @@ class GroupFieldSerializer(serializers.RelatedField):
 
 
 class UserSerializer(serializers.ModelSerializer):
+    created = serializers.DateTimeField(format="%H:%M:%S %d-%m-%Y")
     group = GroupFieldSerializer()
 
     class Meta:

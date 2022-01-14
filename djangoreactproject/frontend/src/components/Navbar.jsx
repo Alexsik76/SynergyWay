@@ -1,13 +1,13 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 function Navbar() {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <div className="container-fluid">
-        <Link to="/" className="navbar-brand">
+        <NavLink to="/" className="navbar-brand">
           Synergy React Demo
-        </Link>
+        </NavLink>
         <button
           className="navbar-toggler"
           type="button"
@@ -21,12 +21,12 @@ function Navbar() {
         </button>
         <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div className="navbar-nav">
-            <Link to="users" className="nav-item nav-link">
+            <NavLink to="users" className="nav-item nav-link">
               Users
-            </Link>
-            <Link to="groups " className="nav-item nav-link">
+            </NavLink>
+            <NavLink to="groups " className="nav-item nav-link">
               Groups
-            </Link>
+            </NavLink>
           </div>
         </div>
       </div>

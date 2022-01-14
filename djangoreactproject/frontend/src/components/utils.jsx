@@ -36,9 +36,6 @@ async function getAction(action_name, path, obj) {
       await axios.put(`${url}/`, obj);
       break;
     }
-    case "delete":
-      await axios.delete(url, obj);
-      break;
   }
 }
 
@@ -47,112 +44,34 @@ async function deleteObject(id, path_part) {
   await axios.delete(url);
 }
 
-async function actionCreateOrUpdate({
-  initVals,
+async function actionCreateOrUpdate(
+  table_name,
   action_name,
-  new_val1,
-  new_val2,
-  mutate,
-} = {}) {
-  const path_part = `/${initVals.table}/${initVals.obj_pk}`;
-  const newObject = {};
-  newObject[initVals.field1Name] = new_val1;
-  newObject[initVals.field2Name] = new_val2;
-  await getAction(action_name, path_part, newObject);
-  await mutate();
+  new_values,
+  pk = ""
+) {
+  const path_part = `/${table_name}/${pk}`;
+  await getAction(action_name, path_part, new_values);
 }
 
-function getInitValues(table, action, obj) {
-  let initValues = {};
-  switch (table) {
-    case "users": {
-      initValues.table = "users";
-      initValues.field1Name = "username";
-      initValues.field2Name = "group";
-      break;
-    }
-    case "groups": {
-      initValues.table = "groups";
-      initValues.field1Name = "name";
-      initValues.field2Name = "description";
-      break;
-    }
+class Field {
+  constructor(name) {
+    this.name = name;
   }
-  switch (action) {
-    case "create": {
-      initValues.field1Val = "";
-      initValues.field2Val = "";
-      initValues.obj_pk = "";
-      break;
-    }
-    case "update": {
-      initValues.field1Val = obj[initValues.field1Name];
-      initValues.field2Val = obj[initValues.field2Name];
-      initValues.obj_pk = obj["pk"];
-      break;
-    }
+  get_init_value(obj) {
+    return obj !== undefined ? obj[this.name] : "";
   }
-  return initValues;
+}
+function getFields(table_name) {
+  return table_name === "users"
+    ? {
+        field1: new Field("username"),
+        field2: new Field("group"),
+      }
+    : {
+        field1: new Field("name"),
+        field2: new Field("description"),
+      };
 }
 
-function getFields (tableName) {
-        const tableFields = {
-        field1: {
-            name:"",
-            initValue:"",
-            handler:""
-        },
-        field2: {
-            name:"",
-            initValue:"",
-            handler:""
-        },
-    }
-        switch (tableName) {
-            case "users": {
-                tableFields.field1.name = "username"
-                tableFields.field2.name = "group"
-                break
-            }
-            case "groups": {
-                tableFields.field1.name = "name"
-                tableFields.field2.name = "descriptions"
-                break
-            }
-        }
-       return tableFields
-    }
-
-    class Field {
-    constructor(name) {
-        this.name = name
-    }
-    set_init_value(obj) {
-       return (obj!== undefined)? obj[this.name]: ""
-        }
-    }
-    function getFields2(table_name) {
-
-        return (table_name === 'users')
-            ?
-            {
-                field1: new Field('username'),
-                field2: new Field('group')
-            }
-            :
-            {
-                field1: new Field('name'),
-                field2: new Field('description')
-            }
-        }
-
-
-export {
-  get_url,
-  useObjects,
-  deleteObject,
-  actionCreateOrUpdate,
-  getInitValues,
-  getFields,
-  getFields2
-};
+export { get_url, useObjects, deleteObject, actionCreateOrUpdate, getFields };

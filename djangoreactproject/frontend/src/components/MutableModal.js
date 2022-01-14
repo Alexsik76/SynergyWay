@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Button, Modal } from "react-bootstrap";
 
 import MutableForm from "./MutableForm";
-import { actionCreateOrUpdate, getInitValues } from "./utils";
+import { actionCreateOrUpdate } from "./utils";
 
 export default function MutableModal(props) {
   const [show, setShow] = useState(false);
@@ -11,25 +11,20 @@ export default function MutableModal(props) {
   };
   const handleShow = () => setShow(true);
 
-  function handleValues(val1, val2) {
-    actionCreateOrUpdate()
-  }
-
-
-  const initValues = getInitValues(props.table_name, props.action, props.obj);
-
-  async function handleForm(val1, val2) {
+  async function handleValues(val1, val2) {
+    let new_values = {};
+    new_values[props.fields.field1.name] = val1;
+    new_values[props.fields.field2.name] = val2;
+    let pk = props.action === "update" ? props.obj["pk"] : "";
     try {
-      if (val1 && val2) {
-        await actionCreateOrUpdate({
-          initVals: initValues,
-          action_name: props.action,
-          new_val1: val1,
-          new_val2: val2,
-          mutate: props.mutate,
-        });
-        await setShow(false);
-      }
+      await actionCreateOrUpdate(
+        props.table_name,
+        props.action,
+        new_values,
+        pk
+      );
+      await props.mutate();
+      await setShow(false);
     } catch (error) {
       console.error(error);
     }
@@ -47,7 +42,12 @@ export default function MutableModal(props) {
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <MutableForm handleForm={handleForm} initValues={initValues} fields={props.fields}/>
+          <MutableForm
+            handleForm={handleValues}
+            fields={props.fields}
+            table_name={props.table_name}
+            obj={props.obj}
+          />
         </Modal.Body>
       </Modal>
     </>

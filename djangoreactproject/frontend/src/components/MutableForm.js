@@ -4,19 +4,17 @@ import MutableField from "./MutableField";
 
 export default function MutableForm(props) {
   const [validated, setValidated] = useState(false);
-  function get_value (field_name) {
-    return
-  }
+  const { field1, field2 } = props.fields;
 
-  const [val1, setVal1] = useState(props.initValues.field1Val);
-  const [val2, setVal2] = useState(props.initValues.field2Val);
+  const [val1, setVal1] = useState(field1.get_init_value(props.obj));
+  const [val2, setVal2] = useState(field2.get_init_value(props.obj));
   const handleVal1 = (event) => {
     setVal1(event.target.value);
   };
   const handleVal2 = (event) => {
     setVal2(event.target.value);
   };
-  const handleSubmit = (event) => {
+  function handleSubmit(event) {
     event.preventDefault();
     const form = event.currentTarget;
     if (form.checkValidity() === false) {
@@ -24,26 +22,25 @@ export default function MutableForm(props) {
     }
     setValidated(true);
     props.handleForm(val1, val2);
-  };
-  const field_name =
-    props.initValues.table === "users" ? "Username" : "Group name";
+  }
+
   return (
     <Form noValidate validated={validated} onSubmit={handleSubmit}>
-      <Form.Group className="mb-3" controlId={"form"+field_name+1}>
-        <Form.Label>{field_name}</Form.Label>
+      <Form.Group className="mb-3" controlId={"form" + field1.name + 1}>
+        <Form.Label>{field1.name}</Form.Label>
         <Form.Control
           required
           type="text"
-          placeholder={field_name}
+          placeholder={field1.name}
           onChange={handleVal1}
           value={val1}
         />
       </Form.Group>
-      <Form.Group className="mb-3" controlId={"form" + field_name + 1}>
+      <Form.Group className="mb-3" controlId={"form" + field2.name + 2}>
         <MutableField
-          table_name={props.initValues.table}
           handler={handleVal2}
           value={val2}
+          field={props.fields.field2}
         />
       </Form.Group>
       <Button type="submit">Submit form</Button>
