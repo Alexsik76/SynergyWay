@@ -6,10 +6,7 @@ services:
       dockerfile: docker/python/Dockerfile
     volumes:
       - ./backend:/backend
-    command:
-       - /bin/sh
-       - "-c"
-       - "pipenv run python manage.py migrate && pipenv run python manage.py runserver 0.0.0.0:8000"
+    command: python manage.py runserver 0.0.0.0:8000
 
     ports:
       - "8000:8000"
