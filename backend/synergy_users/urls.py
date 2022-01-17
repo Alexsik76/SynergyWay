@@ -4,7 +4,8 @@ from . import views
 
 urlpatterns = [
     path('users/', views.UsersList.as_view()),
-    path('users/<int:pk>/', views.UserDetail.as_view()),
+    path('users/<int:pk>/', views.UserDetail.as_view(),
+         name='synergyuser-detail'),
     path('groups/', views.GroupsList.as_view()),
     path('groups/<int:pk>/', views.GroupDetail.as_view()),
 ]

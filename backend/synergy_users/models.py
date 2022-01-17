@@ -18,7 +18,8 @@ class SynergyUser(models.Model):
     group = models.ForeignKey(SynergyGroup,
                               on_delete=models.PROTECT,
                               related_name='user',
-                              related_query_name='users')
+                              related_query_name='users',
+                              null=True)
 
     def __str__(self):
         return self.username
