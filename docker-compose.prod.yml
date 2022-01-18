@@ -5,8 +5,7 @@ services:
       context: .
       dockerfile: docker/django/Dockerfile.prod
     volumes:
-      - ./backend:/backend
-      - /home/app/web/staticfiles
+      - static_volume:/home/app/web/staticfiles
     command: gunicorn djangoreactproject.wsgi --bind 0.0.0.0:8000
 
     expose:

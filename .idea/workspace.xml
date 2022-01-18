@@ -5,9 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1ae764de-1b9c-4ae5-a956-72399f175bd2" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Dockerfile.dev" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.env.dev" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/Pipfile" beforeDir="false" afterPath="$PROJECT_DIR$/backend/Pipfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/Pipfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/backend/Pipfile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/djangoreactproject/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/djangoreactproject/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-compose.prod.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.prod.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose-dev.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/django/Dockerfile" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/docker/django/Dockerfile.prod" beforeDir="false" afterPath="$PROJECT_DIR$/docker/django/Dockerfile.prod" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/nginx/nginx.conf" beforeDir="false" afterPath="$PROJECT_DIR$/nginx/nginx.conf" afterDir="false" />
     </list>
@@ -15,6 +22,9 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -41,7 +51,7 @@
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="Docker" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -49,15 +59,26 @@
       <recent name="C:\Users\alex\dockerized\SynergyWay\docker\django" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\alex\test_tasks\SynergyWay\backend" />
+      <recent name="C:\Users\alex\test_tasks\SynergyWay\backend\djangoreactproject" />
+      <recent name="C:\Users\alex\test_tasks\SynergyWay" />
       <recent name="C:\Users\alex\dockerized\SynergyWay" />
     </key>
   </component>
-  <component name="RunManager" selected="Docker.docker-compose.prod.yml: Compose Deployment">
+  <component name="RunManager" selected="Docker.docker-compose-dev.yml: Compose Deployment">
     <configuration name="Django Docker" type="docker-deploy" factoryName="docker-compose.yml" server-name="Docker">
       <deployment type="docker-compose.yml">
         <settings>
           <option name="envFilePath" value="" />
           <option name="sourceFilePath" value="docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="docker-compose-dev.yml: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="sourceFilePath" value="docker-compose-dev.yml" />
         </settings>
       </deployment>
       <method v="2" />
@@ -84,28 +105,31 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Django Server.DjangoRun" />
       <item itemvalue="Docker.Django Docker" />
-      <item itemvalue="Docker.docker-compose.prod.yml.nginx: Compose Deployment" />
       <item itemvalue="Docker.docker-compose.prod.yml: Compose Deployment" />
+      <item itemvalue="Docker.docker-compose.prod.yml.nginx: Compose Deployment" />
+      <item itemvalue="Django Server.DjangoRun" />
+      <item itemvalue="Docker.docker-compose-dev.yml: Compose Deployment" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Docker.docker-compose.prod.yml: Compose Deployment" />
+        <item itemvalue="Docker.docker-compose-dev.yml: Compose Deployment" />
         <item itemvalue="Docker.docker-compose.prod.yml.nginx: Compose Deployment" />
+        <item itemvalue="Docker.docker-compose.prod.yml: Compose Deployment" />
       </list>
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="74288365-c5af-4923-a976-3abf1293ad92" name="Changes" comment="" />
+      <changelist id="1ae764de-1b9c-4ae5-a956-72399f175bd2" name="Changes" comment="" />
       <created>1642277856514</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1642277856514</updated>
       <workItem from="1642277857828" duration="12189000" />
       <workItem from="1642312244279" duration="25349000" />
+      <workItem from="1642442928238" duration="20422000" />
     </task>
     <task id="LOCAL-00001" summary="Starting Django">
       <created>1642291295822</created>
@@ -128,7 +152,14 @@
       <option name="project" value="LOCAL" />
       <updated>1642331583910</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Starting Django static">
+      <created>1642430354326</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1642430354326</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -149,6 +180,7 @@
     <MESSAGE value="Starting Django" />
     <MESSAGE value="Starting Django 2" />
     <MESSAGE value="Starting Django 3" />
-    <option name="LAST_COMMIT_MESSAGE" value="Starting Django 3" />
+    <MESSAGE value="Starting Django static" />
+    <option name="LAST_COMMIT_MESSAGE" value="Starting Django static" />
   </component>
 </project>
