@@ -5,18 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1ae764de-1b9c-4ae5-a956-72399f175bd2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Dockerfile.dev" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/.env.dev" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/Pipfile" beforeDir="false" afterPath="$PROJECT_DIR$/backend/Pipfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/Pipfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/backend/Pipfile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/djangoreactproject/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/djangoreactproject/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.prod.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.prod.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose-dev.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/django/Dockerfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/django/Dockerfile.prod" beforeDir="false" afterPath="$PROJECT_DIR$/docker/django/Dockerfile.prod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nginx/nginx.conf" beforeDir="false" afterPath="$PROJECT_DIR$/nginx/nginx.conf" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,12 +35,12 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/docker/django" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/backend" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="Docker" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -65,59 +54,21 @@
       <recent name="C:\Users\alex\dockerized\SynergyWay" />
     </key>
   </component>
-  <component name="RunManager" selected="Docker.docker-compose-dev.yml: Compose Deployment">
-    <configuration name="Django Docker" type="docker-deploy" factoryName="docker-compose.yml" server-name="Docker">
+  <component name="RunManager" selected="Docker.Dev">
+    <configuration name="Dev" type="docker-deploy" factoryName="docker-compose.yml" server-name="Docker">
       <deployment type="docker-compose.yml">
         <settings>
           <option name="envFilePath" value="" />
-          <option name="sourceFilePath" value="docker-compose.yml" />
-        </settings>
-      </deployment>
-      <method v="2" />
-    </configuration>
-    <configuration name="docker-compose-dev.yml: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
-      <deployment type="docker-compose.yml">
-        <settings>
           <option name="sourceFilePath" value="docker-compose-dev.yml" />
-        </settings>
-      </deployment>
-      <method v="2" />
-    </configuration>
-    <configuration name="docker-compose.prod.yml: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
-      <deployment type="docker-compose.yml">
-        <settings>
-          <option name="sourceFilePath" value="docker-compose.prod.yml" />
-        </settings>
-      </deployment>
-      <method v="2" />
-    </configuration>
-    <configuration name="docker-compose.prod.yml.nginx: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
-      <deployment type="docker-compose.yml">
-        <settings>
-          <option name="services">
-            <list>
-              <option value="nginx" />
-            </list>
-          </option>
-          <option name="sourceFilePath" value="docker-compose.prod.yml" />
+          <option name="upDetach" value="false" />
         </settings>
       </deployment>
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Docker.Django Docker" />
-      <item itemvalue="Docker.docker-compose.prod.yml: Compose Deployment" />
-      <item itemvalue="Docker.docker-compose.prod.yml.nginx: Compose Deployment" />
       <item itemvalue="Django Server.DjangoRun" />
-      <item itemvalue="Docker.docker-compose-dev.yml: Compose Deployment" />
+      <item itemvalue="Docker.Dev" />
     </list>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Docker.docker-compose-dev.yml: Compose Deployment" />
-        <item itemvalue="Docker.docker-compose.prod.yml.nginx: Compose Deployment" />
-        <item itemvalue="Docker.docker-compose.prod.yml: Compose Deployment" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -129,7 +80,8 @@
       <updated>1642277856514</updated>
       <workItem from="1642277857828" duration="12189000" />
       <workItem from="1642312244279" duration="25349000" />
-      <workItem from="1642442928238" duration="20422000" />
+      <workItem from="1642442928238" duration="20535000" />
+      <workItem from="1642539017074" duration="1288000" />
     </task>
     <task id="LOCAL-00001" summary="Starting Django">
       <created>1642291295822</created>
@@ -159,7 +111,21 @@
       <option name="project" value="LOCAL" />
       <updated>1642430354326</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Dockerized django">
+      <created>1642535796465</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1642535796465</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Addedn env_dev">
+      <created>1642535862460</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1642535862460</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -181,6 +147,8 @@
     <MESSAGE value="Starting Django 2" />
     <MESSAGE value="Starting Django 3" />
     <MESSAGE value="Starting Django static" />
-    <option name="LAST_COMMIT_MESSAGE" value="Starting Django static" />
+    <MESSAGE value="Dockerized django" />
+    <MESSAGE value="Addedn env_dev" />
+    <option name="LAST_COMMIT_MESSAGE" value="Addedn env_dev" />
   </component>
 </project>
