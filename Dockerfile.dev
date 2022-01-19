@@ -1,10 +1,9 @@
 FROM python:slim
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
-RUN pip install --quiet --no-cache-dir --upgrade pip && \
-	pip install --quiet --no-cache-dir pipenv
+RUN pip install --quiet --no-cache-dir --upgrade pip
+RUN	pip install --quiet --no-cache-dir pipenv
 ENV APP_HOME=/home/backend/
 WORKDIR $APP_HOME
-COPY ./backend/Pipfile $APP_HOME
-COPY ./backend/Pipfile.lock $APP_HOME
-RUN pipenv install --system
+COPY ./backend/Pipfile ./backend/Pipfile.lock $APP_HOME
+RUN pipenv install --system --deploy --ignore-pipfile
