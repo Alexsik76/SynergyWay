@@ -4,27 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1ae764de-1b9c-4ae5-a956-72399f175bd2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/backend/postgres_data/pg_stat/db_0.stat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/postgres_data/pg_stat/db_13756.stat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/postgres_data/pg_stat/db_16384.stat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/postgres_data/pg_stat/global.stat" afterDir="false" />
+    <list default="true" id="74288365-c5af-4923-a976-3abf1293ad92" name="Changes" comment="Starting Django prod">
+      <change afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sshConfigs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/webServers.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/synergy_users/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/synergy_users/migrations/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.env_dev" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.env_dev" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose-dev.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
-    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
-  </component>
   <component name="Git.Settings">
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="dev" />
-      </map>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -38,8 +33,13 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/backend" />
+    <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/docker-compose-dev.yml" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -49,47 +49,69 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\alex\test_tasks\SynergyWay\backend" />
       <recent name="C:\Users\alex\dockerized\SynergyWay\docker\django" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\alex\test_tasks\SynergyWay\backend" />
-      <recent name="C:\Users\alex\test_tasks\SynergyWay\backend\djangoreactproject" />
-      <recent name="C:\Users\alex\test_tasks\SynergyWay" />
       <recent name="C:\Users\alex\dockerized\SynergyWay" />
     </key>
   </component>
-  <component name="RunManager" selected="Docker.Dev">
-    <configuration name="Dev" type="docker-deploy" factoryName="docker-compose.yml" server-name="Docker">
+  <component name="RunManager" selected="Docker.docker-compose-dev.yml: Compose Deployment">
+    <configuration name="Django Docker" type="docker-deploy" factoryName="docker-compose.yml" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="envFilePath" value="" />
+          <option name="sourceFilePath" value="docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="docker-compose-dev.yml: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
       <deployment type="docker-compose.yml">
         <settings>
           <option name="envFilePath" value="" />
           <option name="sourceFilePath" value="docker-compose-dev.yml" />
-          <option name="upDetach" value="false" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="docker-compose.prod.yml.nginx: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="services">
+            <list>
+              <option value="nginx" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker-compose.prod.yml" />
         </settings>
       </deployment>
       <method v="2" />
     </configuration>
     <list>
       <item itemvalue="Django Server.DjangoRun" />
-      <item itemvalue="Docker.Dev" />
+      <item itemvalue="Docker.Django Docker" />
+      <item itemvalue="Docker.docker-compose.prod.yml.nginx: Compose Deployment" />
+      <item itemvalue="Docker.docker-compose-dev.yml: Compose Deployment" />
     </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Docker.docker-compose-dev.yml: Compose Deployment" />
+        <item itemvalue="Docker.docker-compose.prod.yml.nginx: Compose Deployment" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="1ae764de-1b9c-4ae5-a956-72399f175bd2" name="Changes" comment="" />
+      <changelist id="74288365-c5af-4923-a976-3abf1293ad92" name="Changes" comment="" />
       <created>1642277856514</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1642277856514</updated>
       <workItem from="1642277857828" duration="12189000" />
       <workItem from="1642312244279" duration="25349000" />
-      <workItem from="1642442928238" duration="20535000" />
-      <workItem from="1642539017074" duration="1511000" />
-      <workItem from="1642590661139" duration="13380000" />
-      <workItem from="1642665190237" duration="1354000" />
-      <workItem from="1642677433184" duration="1954000" />
+      <workItem from="1642713815588" duration="17000" />
+      <workItem from="1642753209766" duration="9405000" />
     </task>
     <task id="LOCAL-00001" summary="Starting Django">
       <created>1642291295822</created>
@@ -112,42 +134,7 @@
       <option name="project" value="LOCAL" />
       <updated>1642331583910</updated>
     </task>
-    <task id="LOCAL-00004" summary="Starting Django static">
-      <created>1642430354326</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1642430354326</updated>
-    </task>
-    <task id="LOCAL-00005" summary="Dockerized django">
-      <created>1642535796465</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1642535796465</updated>
-    </task>
-    <task id="LOCAL-00006" summary="Addedn env_dev">
-      <created>1642535862460</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1642535862460</updated>
-    </task>
-    <task id="LOCAL-00007" summary="Configured PyCharm">
-      <created>1642540522500</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1642540522501</updated>
-    </task>
-    <task id="LOCAL-00008" summary="Added Postgres">
-      <created>1642629703120</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1642629703120</updated>
-    </task>
-    <option name="localTasksCounter" value="9" />
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -168,11 +155,6 @@
     <MESSAGE value="Starting Django" />
     <MESSAGE value="Starting Django 2" />
     <MESSAGE value="Starting Django 3" />
-    <MESSAGE value="Starting Django static" />
-    <MESSAGE value="Dockerized django" />
-    <MESSAGE value="Addedn env_dev" />
-    <MESSAGE value="Configured PyCharm" />
-    <MESSAGE value="Added Postgres" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Postgres" />
+    <option name="LAST_COMMIT_MESSAGE" value="Starting Django 3" />
   </component>
 </project>

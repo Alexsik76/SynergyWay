@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="c67db099-d945-4646-b9e1-366da9844a1c" name="RHELHome" url="http://localhost">
+        <fileTransfer rootFolder="/home" accessType="SFTP" host="192.168.88.251" port="22" sshConfigId="2909d2a8-1a36-427c-b636-0e3a72b73951" sshConfig="alex@192.168.88.251:22 agent" authAgent="true">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
