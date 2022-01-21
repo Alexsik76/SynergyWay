@@ -127,3 +127,15 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+/djangoreactproject/frontend/node_modules/
+/.idea/codeStyles/codeStyleConfig.xml
+/.idea/inspectionProfiles/profiles_settings.xml
+/.idea/inspectionProfiles/Project_Default.xml
+/.idea/.gitignore
+/.idea/jsLibraryMappings.xml
+/.idea/misc.xml
+/.idea/modules.xml
+/.idea/SynergyWay.iml
+/.idea/vcs.xml
+/test_task_Python.pdf
+/djangoreactproject/node_modules/
