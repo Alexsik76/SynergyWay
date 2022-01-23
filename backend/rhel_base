@@ -6,3 +6,30 @@ podman run --name django_db -d \
 -v ~/pg_data:/var/lib/postgresql/data:Z \
 -p 5432:5432 \
 docker.io/library/postgres:14
+
+podman run --name django_pod -d \
+--rm -it \
+-e DEBUG=0 \
+-e SECRET_KEY=change_me \
+-e DJANGO_ALLOWED_HOSTS="localhost 127.0.0.1 192.168.88.251 [::1]" \
+-e SQL_ENGINE=django.db.backends.postgresql \
+-e SQL_DATABASE=django_db \
+-e SQL_USER=django_db_user \
+-e SQL_PASSWORD=synergy_way \
+-e SQL_HOST=192.168.88.251 \
+-e SQL_PORT=5432 \
+-p 8000:8000 \
+localhost/django_pod:latest \
+/bin/sh -c "gunicorn djangoreactproject.wsgi --bind 0.0.0.0:8000"
+
+
+python  manage.py runserver 0:8000
+
+podman run --name django_pod -d \
+--rm -it \
+-e ENV_FILENAME=".env.prod" \
+-p 8000:8000 \
+localhost/django_pod:latest \
+/bin/sh -c "gunicorn djangoreactproject.wsgi --bind 0.0.0.0:8000"
+
+

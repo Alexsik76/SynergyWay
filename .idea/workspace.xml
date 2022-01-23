@@ -4,16 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="74288365-c5af-4923-a976-3abf1293ad92" name="Changes" comment="Work with podman">
-      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/requirements.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/rhel_base" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/entrypoint.prod.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
+    <list default="true" id="74288365-c5af-4923-a976-3abf1293ad92" name="Changes" comment="Work with podman 2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/.env.prod" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.env.prod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.prod.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.prod.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nginx/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/nginx/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/djangoreactproject/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/djangoreactproject/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/rhel_base" beforeDir="false" afterPath="$PROJECT_DIR$/backend/rhel_base" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,7 +35,7 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Dockerfile" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -57,12 +52,21 @@
       <recent name="C:\Users\alex\dockerized\SynergyWay" />
     </key>
   </component>
-  <component name="RunManager" selected="Docker.nginx/Dockerfile">
+  <component name="RunManager" selected="Docker.Dockerfile">
     <configuration name="Django Docker" type="docker-deploy" factoryName="docker-compose.yml" server-name="Docker">
       <deployment type="docker-compose.yml">
         <settings>
           <option name="envFilePath" value="" />
           <option name="sourceFilePath" value="docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="Dockerfile" type="docker-deploy" factoryName="dockerfile" temporary="true" server-name="Docker">
+      <deployment type="dockerfile">
+        <settings>
+          <option name="containerName" value="" />
+          <option name="sourceFilePath" value="Dockerfile" />
         </settings>
       </deployment>
       <method v="2" />
@@ -89,24 +93,16 @@
       </deployment>
       <method v="2" />
     </configuration>
-    <configuration name="nginx/Dockerfile" type="docker-deploy" factoryName="dockerfile" temporary="true" server-name="Docker">
-      <deployment type="dockerfile">
-        <settings>
-          <option name="sourceFilePath" value="nginx/Dockerfile" />
-        </settings>
-      </deployment>
-      <method v="2" />
-    </configuration>
     <list>
       <item itemvalue="Django Server.DjangoRun" />
       <item itemvalue="Docker.Django Docker" />
       <item itemvalue="Docker.docker-compose-dev.yml: Compose Deployment" />
       <item itemvalue="Docker.docker-compose.prod.yml.nginx: Compose Deployment" />
-      <item itemvalue="Docker.nginx/Dockerfile" />
+      <item itemvalue="Docker.Dockerfile" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Docker.nginx/Dockerfile" />
+        <item itemvalue="Docker.Dockerfile" />
         <item itemvalue="Docker.docker-compose.prod.yml.nginx: Compose Deployment" />
         <item itemvalue="Docker.docker-compose-dev.yml: Compose Deployment" />
       </list>
@@ -125,7 +121,7 @@
       <workItem from="1642713815588" duration="17000" />
       <workItem from="1642753209766" duration="9466000" />
       <workItem from="1642882026929" duration="5885000" />
-      <workItem from="1642928999210" duration="6876000" />
+      <workItem from="1642928999210" duration="14737000" />
     </task>
     <task id="LOCAL-00001" summary="Starting Django">
       <created>1642291295822</created>
@@ -155,7 +151,14 @@
       <option name="project" value="LOCAL" />
       <updated>1642783762771</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Work with podman 2">
+      <created>1642937912237</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1642937912237</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -177,6 +180,7 @@
     <MESSAGE value="Starting Django 2" />
     <MESSAGE value="Starting Django 3" />
     <MESSAGE value="Work with podman" />
-    <option name="LAST_COMMIT_MESSAGE" value="Work with podman" />
+    <MESSAGE value="Work with podman 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="Work with podman 2" />
   </component>
 </project>
