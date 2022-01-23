@@ -1,0 +1,8 @@
+podman run --name django_db -d \
+--pod=postgre-sql \
+-e POSTGRES_USER=django_db_user \
+-e POSTGRES_PASSWORD=synergy_way \
+-e POSTGRES_DB=django_db \
+-v ~/pg_data:/var/lib/postgresql/data:Z \
+-p 5432:5432 \
+docker.io/library/postgres:14
