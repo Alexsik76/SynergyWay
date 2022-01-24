@@ -9,9 +9,5 @@ if [ "$DATABASE" = "postgres" ]; then
 
   echo "PostgreSQL started"
  fi
-#until python manage.py migrate; do
-#  echo "Waiting for db to be ready..."
-#  sleep 0.2
-#done
 python manage.py migrate
-#python manage.py collectstatic
+python manage.py collectstatic --noinput

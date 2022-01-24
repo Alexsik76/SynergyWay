@@ -41,7 +41,6 @@ RUN sed -i 's/\r$//g'  $APP_HOME/entrypoint.prod.sh
 RUN chmod +x  $APP_HOME/entrypoint.prod.sh
 
 COPY ./backend $APP_HOME
-RUN python manage.py collectstatic --noinput
 
 RUN chown -R app:app $APP_HOME
 

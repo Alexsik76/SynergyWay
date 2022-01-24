@@ -4,29 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="74288365-c5af-4923-a976-3abf1293ad92" name="Changes" comment="Work with react prod">
-      <change afterPath="$PROJECT_DIR$/frontend/default.conf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/.env.prod" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.env.prod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/.env_dev" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.env.dev" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/.env_dev_db" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/djangoreactproject/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/djangoreactproject/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/postgres_data/pg_stat/db_0.stat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/postgres_data/pg_stat/db_13756.stat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/postgres_data/pg_stat/db_16384.stat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/postgres_data/pg_stat/global.stat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose_dev.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose_prod.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose_prod.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/django/Dockerfile.prod" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/entrypoint.prod.sh" beforeDir="false" afterPath="$PROJECT_DIR$/entrypoint.prod.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/table_components.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/table_components.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/utils.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/utils.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nginx/Dockerfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nginx/nginx.conf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nginx/nginx_old.conf" beforeDir="false" />
-    </list>
+    <list default="true" id="74288365-c5af-4923-a976-3abf1293ad92" name="Changes" comment="Work with react prod 2" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -116,11 +94,11 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Django Server.DjangoRun" />
       <item itemvalue="Docker.Django Docker" />
       <item itemvalue="Docker.Dockerfile" />
       <item itemvalue="Docker.docker-compose-dev.yml: Compose Deployment" />
       <item itemvalue="Docker.docker-compose.prod.yml.nginx: Compose Deployment" />
-      <item itemvalue="Django Server.DjangoRun" />
     </list>
     <recent_temporary>
       <list>
@@ -144,7 +122,7 @@
       <workItem from="1642753209766" duration="9466000" />
       <workItem from="1642882026929" duration="5885000" />
       <workItem from="1642928999210" duration="41574000" />
-      <workItem from="1643047585063" duration="14617000" />
+      <workItem from="1643047585063" duration="14771000" />
     </task>
     <task id="LOCAL-00001" summary="Starting Django">
       <created>1642291295822</created>
@@ -195,7 +173,14 @@
       <option name="project" value="LOCAL" />
       <updated>1643032855100</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Work with react prod">
+      <created>1643062421504</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1643062421504</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
