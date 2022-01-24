@@ -3,18 +3,18 @@ import useSWR from "swr";
 
 
 function get_url(part) {
-  let API_URL = "http://localhost:8000/api"
+  // let API_URL = "http://127.0.0.1/api"
 //   if (window.location.origin === "http://localhost:3000") {
 //     API_URL = "http://localhost:8000/api";
 // } else {
 //     API_URL = `${window.location.origin}/api` ;
 // }
-  return `${API_URL}/${part}`;
+//   console.log(window.location.origin)
+  return `${window.location.origin}/api/${part}`;
 }
 
 async function fetcher(url) {
   try {
-    axios.defaults.withCredentials = true;
     const res = await axios.get(url);
     return await res.data;
   } catch (error) {
@@ -33,7 +33,7 @@ function useObjects(table_name) {
 }
 
 async function getAction(action_name, path, obj) {
-  let url = get_url(path, action_name);
+  let url = get_url(path);
   switch (action_name) {
     case "create": {
       await axios.post(url, obj);
@@ -57,7 +57,7 @@ async function actionCreateOrUpdate(
   new_values,
   pk = ""
 ) {
-  const path_part = `/${table_name}/${pk}`;
+  const path_part = `${table_name}/${pk}`;
   await getAction(action_name, path_part, new_values);
 }
 

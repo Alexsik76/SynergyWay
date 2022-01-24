@@ -41,7 +41,7 @@ function RowActions(props) {
 
   async function handleDelete() {
     try {
-      await deleteObject(obj["pk"], `/${table_name}/${obj["pk"]}`);
+      await deleteObject(obj["pk"], `${table_name}/${obj["pk"]}`);
       await mutate();
     } catch (error) {
       errorSetter(error.response.data);

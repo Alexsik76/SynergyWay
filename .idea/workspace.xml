@@ -4,19 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="74288365-c5af-4923-a976-3abf1293ad92" name="Changes" comment="Work with podman 2.1">
-      <change afterPath="$PROJECT_DIR$/frontend/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nginx/nginx_old.conf" afterDir="false" />
+    <list default="true" id="74288365-c5af-4923-a976-3abf1293ad92" name="Changes" comment="Work with react prod">
+      <change afterPath="$PROJECT_DIR$/frontend/default.conf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/.env.prod" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.env.prod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.env_dev" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.env.dev" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.env_dev_db" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/djangoreactproject/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/djangoreactproject/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.prod.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose_prod.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/postgres_data/pg_stat/db_0.stat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/postgres_data/pg_stat/db_13756.stat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/postgres_data/pg_stat/db_16384.stat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/postgres_data/pg_stat/global.stat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose_dev.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose_prod.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose_prod.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/django/Dockerfile.prod" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/entrypoint.prod.sh" beforeDir="false" afterPath="$PROJECT_DIR$/entrypoint.prod.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/table_components.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/table_components.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/utils.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/utils.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nginx/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/nginx/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nginx/nginx.conf" beforeDir="false" afterPath="$PROJECT_DIR$/nginx/nginx.conf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nginx/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nginx/nginx.conf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nginx/nginx_old.conf" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,6 +69,7 @@
       <recent name="C:\Users\alex\dockerized\SynergyWay\docker\django" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\alex\dockerized\SynergyWay\frontend" />
       <recent name="C:\Users\alex\dockerized\SynergyWay\nginx" />
       <recent name="C:\Users\alex\dockerized\SynergyWay" />
     </key>
@@ -106,17 +116,17 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Django Server.DjangoRun" />
       <item itemvalue="Docker.Django Docker" />
+      <item itemvalue="Docker.Dockerfile" />
       <item itemvalue="Docker.docker-compose-dev.yml: Compose Deployment" />
       <item itemvalue="Docker.docker-compose.prod.yml.nginx: Compose Deployment" />
-      <item itemvalue="Docker.Dockerfile" />
+      <item itemvalue="Django Server.DjangoRun" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Docker.Dockerfile" />
         <item itemvalue="Docker.docker-compose.prod.yml.nginx: Compose Deployment" />
         <item itemvalue="Docker.docker-compose-dev.yml: Compose Deployment" />
+        <item itemvalue="Docker.Dockerfile" />
       </list>
     </recent_temporary>
   </component>
@@ -133,7 +143,8 @@
       <workItem from="1642713815588" duration="17000" />
       <workItem from="1642753209766" duration="9466000" />
       <workItem from="1642882026929" duration="5885000" />
-      <workItem from="1642928999210" duration="41540000" />
+      <workItem from="1642928999210" duration="41574000" />
+      <workItem from="1643047585063" duration="14617000" />
     </task>
     <task id="LOCAL-00001" summary="Starting Django">
       <created>1642291295822</created>
@@ -177,7 +188,14 @@
       <option name="project" value="LOCAL" />
       <updated>1642957166588</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Work with react prod">
+      <created>1643032855100</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1643032855100</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -201,6 +219,7 @@
     <MESSAGE value="Work with podman" />
     <MESSAGE value="Work with podman 2" />
     <MESSAGE value="Work with podman 2.1" />
-    <option name="LAST_COMMIT_MESSAGE" value="Work with podman 2.1" />
+    <MESSAGE value="Work with react prod" />
+    <option name="LAST_COMMIT_MESSAGE" value="Work with react prod" />
   </component>
 </project>

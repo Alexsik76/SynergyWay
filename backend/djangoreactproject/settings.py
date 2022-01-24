@@ -18,7 +18,9 @@ env = Env()
 BASE_DIR = Path(__file__).resolve().parent.parent
 ENV_FILENAME = os.environ['ENV_FILENAME']
 env_file = BASE_DIR / ENV_FILENAME
+print(env_file)
 env.read_env(env_file)
+print(env)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
@@ -29,7 +31,7 @@ SECRET_KEY = env('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env('DEBUG', default=False)
 
-# ALLOWED_HOSTS = env('DJANGO_ALLOWED_HOSTS').split(' ')
+ALLOWED_HOSTS = env('DJANGO_ALLOWED_HOSTS').split(' ')
 
 
 # Application definition
@@ -128,33 +130,14 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATIC_URL = '/django_static/'
-STATIC_ROOT = BASE_DIR / '/django_static/'
+STATIC_ROOT = BASE_DIR / 'django_static'
 
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-ALLOWED_HOSTS = [
-    "0.0.0.0", "[::1]"
-]
-# CORS_ORIGIN_ALLOW_ALL = True
-CORS_ALLOWED_ORIGINS = ['http://0.0.0.0', ]
-CORS_ORIGIN_WHITELIST = (
-    '0.0.0.0:80',
-)
-# CORS_ALLOWED_ORIGINS = [
-#     "http://localhost:1337",
-#     "http://localhost:80",
-#     "http://localhost:8000",
-# ]
-CORS_ALLOW_CREDENTIALS = True
 
-# CORS_ALLOW_METHODS = [
-#     "DELETE",
-#     "GET",
-#     "OPTIONS",
-#     "PATCH",
-#     "POST",
-#     "PUT",
-# ]
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:8000",
+]
