@@ -1,14 +1,20 @@
 import axios from "axios";
 import useSWR from "swr";
 
-const API_URL = "http://localhost:8000/api";
 
 function get_url(part) {
-  return `${API_URL}${part}`;
+  let API_URL = "http://localhost:8000/api"
+//   if (window.location.origin === "http://localhost:3000") {
+//     API_URL = "http://localhost:8000/api";
+// } else {
+//     API_URL = `${window.location.origin}/api` ;
+// }
+  return `${API_URL}/${part}`;
 }
 
 async function fetcher(url) {
   try {
+    axios.defaults.withCredentials = true;
     const res = await axios.get(url);
     return await res.data;
   } catch (error) {
@@ -17,7 +23,8 @@ async function fetcher(url) {
 }
 
 function useObjects(table_name) {
-  const { data, error, mutate } = useSWR(`${API_URL}/${table_name}/`, fetcher);
+  const url = get_url(table_name)
+  const { data, error, mutate } = useSWR(`${url}`, fetcher);
   return {
     data,
     isLoading: !error && !data,

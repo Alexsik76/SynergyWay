@@ -5,7 +5,7 @@ FROM python:slim as builder
 WORKDIR /usr/src/app
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
-RUN pip install --quiet --no-cache-dir --upgrade pip
+RUN pip install --upgrade pip
 RUN pip install flake8==3.9.2
 COPY ./backend .
 RUN flake8 --ignore=E501,F401 .
@@ -28,7 +28,7 @@ RUN addgroup --system app && adduser app --system && adduser app app
 ENV HOME=/home/app
 ENV APP_HOME=/home/app/web
 RUN mkdir $APP_HOME
-RUN mkdir $APP_HOME/staticfiles
+RUN mkdir $APP_HOME/django_static
 WORKDIR $APP_HOME
 
 # install dependencies
@@ -49,6 +49,6 @@ RUN chown -R app:app $APP_HOME
 
 # change to the app user
 USER app
-
-# run entrypoint.prod.sh
-ENTRYPOINT ["/home/app/web/entrypoint.prod.sh"]
+#
+## run entrypoint.prod.sh
+#ENTRYPOINT ["/home/app/web/entrypoint.prod.sh"]
