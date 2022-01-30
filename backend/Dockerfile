@@ -7,9 +7,9 @@ ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
 RUN pip install --upgrade pip
 RUN pip install flake8==3.9.2
-COPY ./backend .
+COPY . .
 RUN flake8 --ignore=E501,F401 .
-COPY ./backend/requirements.txt .
+COPY requirements.txt .
 RUN pip wheel --no-cache-dir --no-deps --wheel-dir /usr/src/app/wheels -r requirements.txt
 
 #########
@@ -36,13 +36,13 @@ COPY --from=builder /usr/src/app/requirements.txt .
 RUN pip install --no-cache /wheels/*
 
 ENV ENV_FILENAME=.env.prod
-COPY ./entrypoint.prod.sh .
+COPY entrypoint.prod.sh .
 RUN sed -i 's/\r$//g'  $APP_HOME/entrypoint.prod.sh
 RUN chmod +x  $APP_HOME/entrypoint.prod.sh
 
-COPY ./backend $APP_HOME
+COPY . $APP_HOME
 
 RUN chown -R app:app $APP_HOME
 
 USER app
-RUN ["/home/app/web/entrypoint.prod.sh"]
+ENTRYPOINT ["/home/app/web/entrypoint.prod.sh"]

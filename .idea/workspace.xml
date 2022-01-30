@@ -4,7 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="74288365-c5af-4923-a976-3abf1293ad92" name="Changes" comment="Work with react prod 2" />
+    <list default="true" id="74288365-c5af-4923-a976-3abf1293ad92" name="Changes" comment="Work with react prod 3">
+      <change afterPath="$PROJECT_DIR$/backend/.env_db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/backend/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.env.prod" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.env.prod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/djangoreactproject/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/djangoreactproject/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose_dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose_dev.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose_prod.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose_prod.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/entrypoint.prod.sh" beforeDir="false" afterPath="$PROJECT_DIR$/backend/entrypoint.prod.sh" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -30,7 +40,7 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/nginx" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/backend" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -41,18 +51,20 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\alex\dockerized\SynergyWay\backend" />
       <recent name="C:\Users\alex\dockerized\SynergyWay\nginx" />
       <recent name="C:\Users\alex\dockerized\SynergyWay\frontend" />
       <recent name="C:\Users\alex\dockerized\SynergyWay" />
       <recent name="C:\Users\alex\dockerized\SynergyWay\docker\django" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\alex\dockerized\SynergyWay\backend" />
       <recent name="C:\Users\alex\dockerized\SynergyWay\frontend" />
       <recent name="C:\Users\alex\dockerized\SynergyWay\nginx" />
       <recent name="C:\Users\alex\dockerized\SynergyWay" />
     </key>
   </component>
-  <component name="RunManager" selected="Docker.Dockerfile">
+  <component name="RunManager" selected="Docker.docker-compose_dev.yml.db: Compose Deployment">
     <configuration name="Django Docker" type="docker-deploy" factoryName="docker-compose.yml" server-name="Docker">
       <deployment type="docker-compose.yml">
         <settings>
@@ -80,6 +92,19 @@
       </deployment>
       <method v="2" />
     </configuration>
+    <configuration name="docker-compose_dev.yml.db: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="services">
+            <list>
+              <option value="db" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker-compose_dev.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
     <configuration name="docker-compose.prod.yml.nginx: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
       <deployment type="docker-compose.yml">
         <settings>
@@ -99,9 +124,11 @@
       <item itemvalue="Docker.Dockerfile" />
       <item itemvalue="Docker.docker-compose-dev.yml: Compose Deployment" />
       <item itemvalue="Docker.docker-compose.prod.yml.nginx: Compose Deployment" />
+      <item itemvalue="Docker.docker-compose_dev.yml.db: Compose Deployment" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Docker.docker-compose_dev.yml.db: Compose Deployment" />
         <item itemvalue="Docker.docker-compose.prod.yml.nginx: Compose Deployment" />
         <item itemvalue="Docker.docker-compose-dev.yml: Compose Deployment" />
         <item itemvalue="Docker.Dockerfile" />
@@ -123,6 +150,17 @@
       <workItem from="1642882026929" duration="5885000" />
       <workItem from="1642928999210" duration="41574000" />
       <workItem from="1643047585063" duration="14771000" />
+      <workItem from="1643064096639" duration="264000" />
+      <workItem from="1643128601699" duration="267000" />
+      <workItem from="1643144081466" duration="597000" />
+      <workItem from="1643151479881" duration="596000" />
+      <workItem from="1643152631639" duration="312000" />
+      <workItem from="1643153049993" duration="358000" />
+      <workItem from="1643186882917" duration="663000" />
+      <workItem from="1643274044910" duration="1944000" />
+      <workItem from="1643399375406" duration="786000" />
+      <workItem from="1643453283083" duration="1228000" />
+      <workItem from="1643540991870" duration="10770000" />
     </task>
     <task id="LOCAL-00001" summary="Starting Django">
       <created>1642291295822</created>
@@ -180,7 +218,14 @@
       <option name="project" value="LOCAL" />
       <updated>1643062421504</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Work with react prod 3">
+      <created>1643064353993</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1643064353993</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -205,6 +250,7 @@
     <MESSAGE value="Work with podman 2" />
     <MESSAGE value="Work with podman 2.1" />
     <MESSAGE value="Work with react prod" />
-    <option name="LAST_COMMIT_MESSAGE" value="Work with react prod" />
+    <MESSAGE value="Work with react prod 3" />
+    <option name="LAST_COMMIT_MESSAGE" value="Work with react prod 3" />
   </component>
 </project>

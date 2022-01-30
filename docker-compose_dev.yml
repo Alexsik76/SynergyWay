@@ -11,16 +11,16 @@ services:
     env_file:
       - backend/.env.dev
 
-volumes:
-      backend:
-#    depends_on:
-#      - db
-#  db:
-#    image: postgres:14-alpine
 #    volumes:
-#      - ./backend/postgres_data:/var/lib/postgresql/data/
-#    env_file:
-#      - ./backend/.env_dev_db
-#
-#volumes:
-#  postgres_data:
+#          django:
+    depends_on:
+      - db
+  db:
+    image: postgres:14-alpine
+    volumes:
+      - ./backend/postgres_data:/var/lib/postgresql/data/
+    env_file:
+      - ./backend/.env_db
+
+volumes:
+  postgres_data:

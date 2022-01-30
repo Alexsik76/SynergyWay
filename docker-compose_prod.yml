@@ -1,16 +1,24 @@
 version: '3.10'
 services:
   django:
-#    restart: unless-stopped
-    environment:
-      - ENV_FILENAME=.env.prod
+    #restart: unless-stopped
+    env_file:
+      - ./backend/.env.prod
     build:
-      context: .
+      context: ./backend
     volumes:
       - static_volume:/home/app/web/django_static
     command: gunicorn djangoreactproject.wsgi --bind 0.0.0.0:8000 --workers 4 --threads 4
-    ports:
-      - 8000:8000
+    expose:
+      - 8000
+    depends_on:
+      - db
+  db:
+    image: postgres:14-alpine
+    volumes:
+      - ./backend/postgres_data:/var/lib/postgresql/data/
+    env_file:
+      - ./backend/.env_db
 
   nginx:
     restart: unless-stopped
@@ -23,6 +31,6 @@ services:
     depends_on:
       - django
 
-
 volumes:
-  static_volume: {}
+  postgres_data:
+  static_volume:

@@ -102,6 +102,7 @@ celerybeat.pid
 *.sage.py
 
 # Environments
+./backend/.env.prod
 .env
 .venv
 env/
@@ -139,3 +140,6 @@ dmypy.json
 /.idea/vcs.xml
 /test_task_Python.pdf
 /djangoreactproject/node_modules/
+
+# db_files
+/backend/postgres_data/
