@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="74288365-c5af-4923-a976-3abf1293ad92" name="Changes" comment="Work with react prod 4">
+    <list default="true" id="74288365-c5af-4923-a976-3abf1293ad92" name="Changes" comment="Work with react prod 5">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose_prod.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose_prod.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/djangoreactproject/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/djangoreactproject/settings.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -154,7 +154,9 @@
       <workItem from="1643399375406" duration="786000" />
       <workItem from="1643453283083" duration="1228000" />
       <workItem from="1643540991870" duration="10801000" />
-      <workItem from="1643617968437" duration="120000" />
+      <workItem from="1643617968437" duration="279000" />
+      <workItem from="1643659865807" duration="880000" />
+      <workItem from="1643663244218" duration="1868000" />
     </task>
     <task id="LOCAL-00001" summary="Starting Django">
       <created>1642291295822</created>
@@ -226,7 +228,14 @@
       <option name="project" value="LOCAL" />
       <updated>1643560247482</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Work with react prod 5">
+      <created>1643618228463</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1643618228463</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -253,6 +262,7 @@
     <MESSAGE value="Work with react prod" />
     <MESSAGE value="Work with react prod 3" />
     <MESSAGE value="Work with react prod 4" />
-    <option name="LAST_COMMIT_MESSAGE" value="Work with react prod 4" />
+    <MESSAGE value="Work with react prod 5" />
+    <option name="LAST_COMMIT_MESSAGE" value="Work with react prod 5" />
   </component>
 </project>

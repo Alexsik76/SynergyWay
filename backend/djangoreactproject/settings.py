@@ -15,7 +15,7 @@ from pathlib import Path
 env = Env()
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-env_file = BASE_DIR / 'env.prod'
+env_file = BASE_DIR / '.env.prod'
 env.read_env(env_file)
 
 # Quick-start development settings - unsuitable for production
