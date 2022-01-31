@@ -4,16 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="74288365-c5af-4923-a976-3abf1293ad92" name="Changes" comment="Work with react prod 3">
-      <change afterPath="$PROJECT_DIR$/backend/.env_db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="74288365-c5af-4923-a976-3abf1293ad92" name="Changes" comment="Work with react prod 4">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/backend/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/.env.prod" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.env.prod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/djangoreactproject/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/djangoreactproject/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose_dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose_dev.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-compose_prod.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose_prod.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/entrypoint.prod.sh" beforeDir="false" afterPath="$PROJECT_DIR$/backend/entrypoint.prod.sh" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -160,7 +153,8 @@
       <workItem from="1643274044910" duration="1944000" />
       <workItem from="1643399375406" duration="786000" />
       <workItem from="1643453283083" duration="1228000" />
-      <workItem from="1643540991870" duration="10770000" />
+      <workItem from="1643540991870" duration="10801000" />
+      <workItem from="1643617968437" duration="120000" />
     </task>
     <task id="LOCAL-00001" summary="Starting Django">
       <created>1642291295822</created>
@@ -225,7 +219,14 @@
       <option name="project" value="LOCAL" />
       <updated>1643064353993</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Work with react prod 4">
+      <created>1643560247482</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1643560247482</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -251,6 +252,7 @@
     <MESSAGE value="Work with podman 2.1" />
     <MESSAGE value="Work with react prod" />
     <MESSAGE value="Work with react prod 3" />
-    <option name="LAST_COMMIT_MESSAGE" value="Work with react prod 3" />
+    <MESSAGE value="Work with react prod 4" />
+    <option name="LAST_COMMIT_MESSAGE" value="Work with react prod 4" />
   </component>
 </project>
