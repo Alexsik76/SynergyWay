@@ -45,4 +45,9 @@ COPY . $APP_HOME
 RUN chown -R app:app $APP_HOME
 
 USER app
-CMD ["/home/app/web/entrypoint.prod.sh"]
+#RUN $APP_HOME/entrypoint.prod.sh
+#RUN #python manage.py migrate
+#RUN python ./manage.py collectstatic --no-input
+#ENTRYPOINT gunicorn djangoreactproject.wsgi --bind 0.0.0.0:8000 --workers 4 --threads 4
+ENTRYPOINT ["/home/app/web/entrypoint.prod.sh"]
+EXPOSE 8000

@@ -5,7 +5,7 @@ RUN npm ci --silent
 COPY ./ ./
 RUN npm run build
 
-FROM nginx:stable-alpine
-COPY --from=build /app/frontend/build /usr/share/nginx/html
-COPY default.conf /etc/nginx/conf.d
+FROM bitnami/nginx:latest
+COPY --from=build /app/frontend/build /app
+COPY default.conf /opt/bitnami/nginx/conf/server_blocks/
 CMD ["nginx", "-g", "daemon off;"]

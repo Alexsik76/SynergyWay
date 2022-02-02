@@ -1,15 +1,15 @@
 version: '3.10'
 services:
   django:
-    #restart: unless-stopped
-    env_file:
-      - ./backend/.env.prod
+    restart: unless-stopped
+#    env_file:
+#      - ./backend/.env.prod
     build:
       context: ./backend
     volumes:
       - static_volume:/home/app/web/django_static
     #command: python manage.py runserver
-    command: gunicorn djangoreactproject.wsgi --bind 0.0.0.0:8000 --workers 4 --threads 4
+#    command: gunicorn djangoreactproject.wsgi --bind 0.0.0.0:8000 --workers 4 --threads 4
     expose:
       - 8000
     depends_on:
@@ -26,7 +26,7 @@ services:
     build:
       context: ./frontend
     volumes:
-      - static_volume:/home/app/web/django_static
+      - static_volume:/app
     ports:
       - 80:80
     depends_on:
