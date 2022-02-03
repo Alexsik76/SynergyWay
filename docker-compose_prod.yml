@@ -2,16 +2,13 @@ version: '3.10'
 services:
   django:
     restart: unless-stopped
-#    env_file:
-#      - ./backend/.env.prod
     build:
       context: ./backend
     volumes:
       - static_volume:/home/app/web/django_static
-    #command: python manage.py runserver
-#    command: gunicorn djangoreactproject.wsgi --bind 0.0.0.0:8000 --workers 4 --threads 4
-    expose:
-      - 8000
+
+    ports:
+      - 8000:8000
     depends_on:
       - db
   db:
@@ -26,12 +23,11 @@ services:
     build:
       context: ./frontend
     volumes:
-      - static_volume:/app
+      - static_volume:/app/django_static
     ports:
-      - 80:80
+      - 8080:8080
     depends_on:
       - django
-
 volumes:
   postgres_data:
   static_volume:
